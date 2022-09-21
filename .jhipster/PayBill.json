@@ -1,0 +1,318 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092606",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "pay_bill",
+  "fields": [
+    {
+      "fieldName": "aadharNum",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "dAbsAmt",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "absentDays",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dAfkRent",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dApfAcpf",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dArrear",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "arrearPay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "bankAcctNo",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dBklnRec",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "bankName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "basic",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "costHeadName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdUserId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dCpf",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "deptName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deptId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "desgName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "empType",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "empId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "empName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dFaRecovery",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "gis",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "gradePay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "grossPay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dGrpIns",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dIncTax",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "incAmt",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "incDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dlFee",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dMisc",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "monthDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "netPay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "otherAmt",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "otAmt",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paidLeave",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "pancardNum",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "dPfInRec",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "pfNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dPfs",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dPolicy",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dProfTax",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "scale",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scalePay",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dSociety",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "totAllowance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totDed",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalGrosspay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalDay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dUnionFee",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dVlnRec",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "ca",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "cca",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "da",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "fpalw",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "hra",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "npa",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dOther",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "tAllowance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "talw",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "ta",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "ufalw",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "wa",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "PayBill",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employeeSalaryStructure",
+      "relationshipName": "employeeSalaryStructure",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

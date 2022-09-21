@@ -1,0 +1,132 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092527",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "Title",
+      "fieldValues": "MR (Mr),MRS (Mrs),MISS (Miss)"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "passwordHash",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "mobileNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imageUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activated",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "langKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activationKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resetKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resetDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Employee",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employeeDetails",
+      "ownerSide": true,
+      "relationshipName": "employeeDetails",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "organization",
+      "relationshipName": "organization",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "incomeTaxSlab",
+      "relationshipName": "incomeTaxSlab",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "permissionName",
+      "otherEntityName": "securityPermission",
+      "otherEntityRelationshipName": "employee",
+      "ownerSide": true,
+      "relationshipName": "securityPermission",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "roleName",
+      "otherEntityName": "securityRole",
+      "otherEntityRelationshipName": "employee",
+      "ownerSide": true,
+      "relationshipName": "securityRole",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "organizationPolicies",
+      "otherEntityRelationshipName": "employee",
+      "ownerSide": false,
+      "relationshipName": "organizationPolicies",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

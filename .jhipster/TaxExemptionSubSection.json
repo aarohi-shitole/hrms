@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092545",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tax_exemption_sub_section",
+  "fields": [
+    {
+      "fieldName": "taxExcemptionSubSection",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "TaxExemptionSubSection",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "taxExemptionSection",
+      "relationshipName": "taxExemptionSection",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

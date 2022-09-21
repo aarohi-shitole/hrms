@@ -1,0 +1,9 @@
+{
+  "hrmsApp": {
+    "Status": {
+      "null": "",
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    }
+  }
+}

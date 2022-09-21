@@ -1,0 +1,257 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-employee-seperation-heading"
+        data-cy="EmployeeSeperationCreateUpdateHeading"
+        jhiTranslate="hrmsApp.employeeSeperation.home.createOrEditLabel"
+      >
+        Create or edit a Employee Seperation
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.reasonForSeperation" for="field_reasonForSeperation"
+            >Reason For Seperation</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reasonForSeperation"
+            id="field_reasonForSeperation"
+            data-cy="reasonForSeperation"
+            formControlName="reasonForSeperation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.seperationDate" for="field_seperationDate"
+            >Seperation Date</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_seperationDate"
+              data-cy="seperationDate"
+              type="datetime-local"
+              class="form-control"
+              name="seperationDate"
+              formControlName="seperationDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.comment" for="field_comment">Comment</label>
+          <input type="text" class="form-control" name="comment" id="field_comment" data-cy="comment" formControlName="comment" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.seperationStatus" for="field_seperationStatus"
+            >Seperation Status</label
+          >
+          <select
+            class="form-control"
+            name="seperationStatus"
+            formControlName="seperationStatus"
+            id="field_seperationStatus"
+            data-cy="seperationStatus"
+          >
+            <option [ngValue]="null">{{ 'hrmsApp.SeperationStatus.null' | translate }}</option>
+            <option *ngFor="let seperationStatus of seperationStatusValues" [value]="seperationStatus">
+              {{ 'hrmsApp.SeperationStatus.' + seperationStatus | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.otherReason" for="field_otherReason">Other Reason</label>
+          <input
+            type="text"
+            class="form-control"
+            name="otherReason"
+            id="field_otherReason"
+            data-cy="otherReason"
+            formControlName="otherReason"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.nagotiatedPeriod" for="field_nagotiatedPeriod"
+            >Nagotiated Period</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="nagotiatedPeriod"
+            id="field_nagotiatedPeriod"
+            data-cy="nagotiatedPeriod"
+            formControlName="nagotiatedPeriod"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.createdBy" for="field_createdBy">Created By</label>
+          <input type="text" class="form-control" name="createdBy" id="field_createdBy" data-cy="createdBy" formControlName="createdBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.updatedOn" for="field_updatedOn">Updated On</label>
+          <div class="d-flex">
+            <input
+              id="field_updatedOn"
+              data-cy="updatedOn"
+              type="datetime-local"
+              class="form-control"
+              name="updatedOn"
+              formControlName="updatedOn"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.createdOn" for="field_createdOn">Created On</label>
+          <div class="d-flex">
+            <input
+              id="field_createdOn"
+              data-cy="createdOn"
+              type="datetime-local"
+              class="form-control"
+              name="createdOn"
+              formControlName="createdOn"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.lastModified" for="field_lastModified">Last Modified</label>
+          <div class="d-flex">
+            <input
+              id="field_lastModified"
+              data-cy="lastModified"
+              type="datetime-local"
+              class="form-control"
+              name="lastModified"
+              formControlName="lastModified"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.lastModifiedBy" for="field_lastModifiedBy"
+            >Last Modified By</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="lastModifiedBy"
+            id="field_lastModifiedBy"
+            data-cy="lastModifiedBy"
+            formControlName="lastModifiedBy"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.freefield1" for="field_freefield1">Freefield 1</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield1"
+            id="field_freefield1"
+            data-cy="freefield1"
+            formControlName="freefield1"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.freefield2" for="field_freefield2">Freefield 2</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield2"
+            id="field_freefield2"
+            data-cy="freefield2"
+            formControlName="freefield2"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.freefield3" for="field_freefield3">Freefield 3</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield3"
+            id="field_freefield3"
+            data-cy="freefield3"
+            formControlName="freefield3"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.freefield4" for="field_freefield4">Freefield 4</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield4"
+            id="field_freefield4"
+            data-cy="freefield4"
+            formControlName="freefield4"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.freefield5" for="field_freefield5">Freefield 5</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield5"
+            id="field_freefield5"
+            data-cy="freefield5"
+            formControlName="freefield5"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeSeperation.employee" for="field_employee">Employee</label>
+          <select
+            class="form-control"
+            id="field_employee"
+            data-cy="employee"
+            name="employee"
+            formControlName="employee"
+            [compareWith]="compareEmployee"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="employeeOption" *ngFor="let employeeOption of employeesSharedCollection">{{ employeeOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092537",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "work_experience",
+  "fields": [
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyType",
+      "fieldType": "CompanyType",
+      "fieldValues": "GOVERNMENT_SECTOR (Government_Sector),PUBLIC_SECTOR (Public_Sector),PRIVATE_SECTOR (Private_Sector),LOCAL_INDUSTRY (Local_Industry),PROP_INDUSTRY (Prop_Industry)"
+    },
+    {
+      "fieldName": "orgAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "yearOfExp",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield5",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "WorkExperience",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

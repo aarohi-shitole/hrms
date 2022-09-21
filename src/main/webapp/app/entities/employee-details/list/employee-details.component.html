@@ -1,0 +1,297 @@
+<div>
+  <h2 id="page-heading" data-cy="EmployeeDetailsHeading">
+    <span jhiTranslate="hrmsApp.employeeDetails.home.title">Employee Details</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="hrmsApp.employeeDetails.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-employee-details"
+        [routerLink]="['/employee-details/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="hrmsApp.employeeDetails.home.createLabel"> Create a new Employee Details </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="employeeDetails?.length === 0">
+    <span jhiTranslate="hrmsApp.employeeDetails.home.notFound">No Employee Details found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="employeeDetails && employeeDetails.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="age">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.age">Age</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fatherName">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.fatherName">Father Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="motherName">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.motherName">Mother Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="employeeId">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.employeeId">Employee Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="yearsOfExperience">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.yearsOfExperience">Years Of Experience</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="notes">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.notes">Notes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="bloodGroup">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.bloodGroup">Blood Group</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="birthDate">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.birthDate">Birth Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="designation">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.designation">Designation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="expertise">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.expertise">Expertise</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="jobDescription">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.jobDescription">Job Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="maritalStatus">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.maritalStatus">Marital Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="secondaryContact">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.secondaryContact">Secondary Contact</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="hobbies">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.hobbies">Hobbies</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="areaInterest">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.areaInterest">Area Interest</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="noOfDependent">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.noOfDependent">No Of Dependent</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="languageKnown">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.languageKnown">Language Known</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="natinality">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.natinality">Natinality</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="description">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.description">Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="department">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.department">Department</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="joiningDate">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.joiningDate">Joining Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.createdBy">Created By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdOn">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.createdOn">Created On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield1">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.freefield1">Freefield 1</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield2">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.freefield2">Freefield 2</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield3">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.freefield3">Freefield 3</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield4">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.freefield4">Freefield 4</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield5">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeDetails.freefield5">Freefield 5</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employeeDetails of employeeDetails; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/employee-details', employeeDetails.id, 'view']">{{ employeeDetails.id }}</a>
+          </td>
+          <td>{{ employeeDetails.age }}</td>
+          <td>{{ employeeDetails.fatherName }}</td>
+          <td>{{ employeeDetails.motherName }}</td>
+          <td>{{ employeeDetails.employeeId }}</td>
+          <td>{{ employeeDetails.yearsOfExperience }}</td>
+          <td>{{ employeeDetails.notes }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.BloodGroup.' + employeeDetails.bloodGroup }}">{{ employeeDetails.bloodGroup }}</td>
+          <td>{{ employeeDetails.birthDate }}</td>
+          <td>{{ employeeDetails.designation }}</td>
+          <td>{{ employeeDetails.expertise }}</td>
+          <td>{{ employeeDetails.jobDescription }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.MaritalStatus.' + employeeDetails.maritalStatus }}">{{ employeeDetails.maritalStatus }}</td>
+          <td>{{ employeeDetails.secondaryContact }}</td>
+          <td>{{ employeeDetails.hobbies }}</td>
+          <td>{{ employeeDetails.areaInterest }}</td>
+          <td>{{ employeeDetails.noOfDependent }}</td>
+          <td>{{ employeeDetails.languageKnown }}</td>
+          <td>{{ employeeDetails.natinality }}</td>
+          <td>{{ employeeDetails.description }}</td>
+          <td>{{ employeeDetails.department }}</td>
+          <td>{{ employeeDetails.joiningDate | formatMediumDatetime }}</td>
+          <td>{{ employeeDetails.createdBy }}</td>
+          <td>{{ employeeDetails.createdOn | formatMediumDatetime }}</td>
+          <td>{{ employeeDetails.freefield1 }}</td>
+          <td>{{ employeeDetails.freefield2 }}</td>
+          <td>{{ employeeDetails.freefield3 }}</td>
+          <td>{{ employeeDetails.freefield4 }}</td>
+          <td>{{ employeeDetails.freefield5 }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/employee-details', employeeDetails.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/employee-details', employeeDetails.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(employeeDetails)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="employeeDetails && employeeDetails.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

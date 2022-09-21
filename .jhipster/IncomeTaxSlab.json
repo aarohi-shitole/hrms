@@ -1,0 +1,112 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092543",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "income_tax_slab",
+  "fields": [
+    {
+      "fieldName": "slab",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "finYear",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "asiYear",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lowerSlab",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "higherSlab",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "incomeTaxPer",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "newSlabPersentage",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "oldSlabPersentage",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "surcharge",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "cessCharge",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "educationCessCharge",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "otherCessCharge",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "year",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "remark",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField5",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "IncomeTaxSlab",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

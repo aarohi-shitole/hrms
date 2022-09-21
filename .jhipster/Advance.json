@@ -1,0 +1,115 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092559",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "advance",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "advanceAmt",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "advanceDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "installAmt",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "installmentMonths",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "advanceStatus",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "fullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instaYear",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "monthDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "instEndDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "instStartDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "pendingAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "pendingMonth",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Advance",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,130 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="exitFormalties">
+      <h2 data-cy="exitFormaltiesDetailsHeading"><span jhiTranslate="hrmsApp.exitFormalties.detail.title">Exit Formalties</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ exitFormalties.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.security">Security</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.security }}">{{ exitFormalties.security }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.feedback">Feedback</span></dt>
+        <dd>
+          <span>{{ exitFormalties.feedback }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.exitDate">Exit Date</span></dt>
+        <dd>
+          <span>{{ exitFormalties.exitDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.exitInterview">Exit Interview</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.exitInterview }}">{{ exitFormalties.exitInterview }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.libNoDue">Lib No Due</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.libNoDue }}">{{ exitFormalties.libNoDue }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.noticePeriodServed">Notice Period Served</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.noticePeriodServed }}">{{ exitFormalties.noticePeriodServed }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.clearence">Clearence</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.clearence }}">{{ exitFormalties.clearence }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.orgAssets">Org Assets</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.orgAssets }}">{{ exitFormalties.orgAssets }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.orgVehical">Org Vehical</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.orgVehical }}">{{ exitFormalties.orgVehical }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.resignLetter">Resign Letter</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.resignLetter }}">{{ exitFormalties.resignLetter }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.shares">Shares</span></dt>
+        <dd>
+          <span>{{ exitFormalties.shares }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.staffWelfare">Staff Welfare</span></dt>
+        <dd>
+          <span>{{ exitFormalties.staffWelfare }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.workForOrg">Work For Org</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.workForOrg }}">{{ exitFormalties.workForOrg }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Status.' + exitFormalties.status }}">{{ exitFormalties.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ exitFormalties.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ exitFormalties.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ exitFormalties.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ exitFormalties.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.isDeleted">Is Deleted</span></dt>
+        <dd>
+          <span>{{ exitFormalties.isDeleted }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.freeField1">Free Field 1</span></dt>
+        <dd>
+          <span>{{ exitFormalties.freeField1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.freeField2">Free Field 2</span></dt>
+        <dd>
+          <span>{{ exitFormalties.freeField2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.freeField3">Free Field 3</span></dt>
+        <dd>
+          <span>{{ exitFormalties.freeField3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.freefield4">Freefield 4</span></dt>
+        <dd>
+          <span>{{ exitFormalties.freefield4 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.freefield5">Freefield 5</span></dt>
+        <dd>
+          <span>{{ exitFormalties.freefield5 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.exitFormalties.employee">Employee</span></dt>
+        <dd>
+          <div *ngIf="exitFormalties.employee">
+            <a [routerLink]="['/employee', exitFormalties.employee.id, 'view']">{{ exitFormalties.employee.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/exit-formalties', exitFormalties.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "hrmsApp": {
+    "bank": {
+      "home": {
+        "title": "Banks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bank",
+        "createOrEditLabel": "Create or edit a Bank",
+        "notFound": "No Banks found"
+      },
+      "created": "A new Bank is created with identifier {{ param }}",
+      "updated": "A Bank is updated with identifier {{ param }}",
+      "deleted": "A Bank is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bank {{ id }}?"
+      },
+      "detail": {
+        "title": "Bank"
+      },
+      "id": "ID",
+      "accountNo": "Account No",
+      "name": "Name",
+      "branch": "Branch",
+      "ifscCode": "Ifsc Code",
+      "mcirCode": "Mcir Code",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "isDeleted": "Is Deleted",
+      "freeField1": "Free Field 1",
+      "freeField2": "Free Field 2",
+      "freeField3": "Free Field 3",
+      "employee": "Employee",
+      "organization": "Organization"
+    }
+  }
+}

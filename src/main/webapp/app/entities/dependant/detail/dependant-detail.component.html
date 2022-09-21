@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dependant">
+      <h2 data-cy="dependantDetailsHeading"><span jhiTranslate="hrmsApp.dependant.detail.title">Dependant</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dependant.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.name">Name</span></dt>
+        <dd>
+          <span>{{ dependant.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.age">Age</span></dt>
+        <dd>
+          <span>{{ dependant.age }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+          <span>{{ dependant.dateOfBirth }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.DependantType.' + dependant.type }}">{{ dependant.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.mobile">Mobile</span></dt>
+        <dd>
+          <span>{{ dependant.mobile }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.address">Address</span></dt>
+        <dd>
+          <span>{{ dependant.address }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ dependant.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ dependant.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ dependant.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ dependant.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.isDeleted">Is Deleted</span></dt>
+        <dd>
+          <span>{{ dependant.isDeleted }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.freeField1">Free Field 1</span></dt>
+        <dd>
+          <span>{{ dependant.freeField1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.freeField2">Free Field 2</span></dt>
+        <dd>
+          <span>{{ dependant.freeField2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.freeField3">Free Field 3</span></dt>
+        <dd>
+          <span>{{ dependant.freeField3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.freefield4">Freefield 4</span></dt>
+        <dd>
+          <span>{{ dependant.freefield4 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.freefield5">Freefield 5</span></dt>
+        <dd>
+          <span>{{ dependant.freefield5 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.dependant.employee">Employee</span></dt>
+        <dd>
+          <div *ngIf="dependant.employee">
+            <a [routerLink]="['/employee', dependant.employee.id, 'view']">{{ dependant.employee.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dependant', dependant.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092602",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "salary_heads",
+  "fields": [
+    {
+      "fieldName": "countStyle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salHeads",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "standard",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "salaryType",
+      "fieldType": "SalaryType",
+      "fieldValues": "EARNING (Earning),DEDUCTION (Deduction)"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "SalaryHeads",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "organization",
+      "relationshipName": "organization",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

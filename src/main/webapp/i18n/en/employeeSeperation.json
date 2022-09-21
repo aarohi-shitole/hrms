@@ -1,0 +1,40 @@
+{
+  "hrmsApp": {
+    "employeeSeperation": {
+      "home": {
+        "title": "Employee Seperations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Employee Seperation",
+        "createOrEditLabel": "Create or edit a Employee Seperation",
+        "notFound": "No Employee Seperations found"
+      },
+      "created": "A new Employee Seperation is created with identifier {{ param }}",
+      "updated": "A Employee Seperation is updated with identifier {{ param }}",
+      "deleted": "A Employee Seperation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Employee Seperation {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee Seperation"
+      },
+      "id": "ID",
+      "reasonForSeperation": "Reason For Seperation",
+      "seperationDate": "Seperation Date",
+      "comment": "Comment",
+      "seperationStatus": "Seperation Status",
+      "otherReason": "Other Reason",
+      "nagotiatedPeriod": "Nagotiated Period",
+      "createdBy": "Created By",
+      "updatedOn": "Updated On",
+      "createdOn": "Created On",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "freefield1": "Freefield 1",
+      "freefield2": "Freefield 2",
+      "freefield3": "Freefield 3",
+      "freefield4": "Freefield 4",
+      "freefield5": "Freefield 5",
+      "employee": "Employee"
+    }
+  }
+}

@@ -1,0 +1,256 @@
+<div>
+  <h2 id="page-heading" data-cy="DocumentsHeading">
+    <span jhiTranslate="hrmsApp.documents.home.title">Documents</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="hrmsApp.documents.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-documents"
+        [routerLink]="['/documents/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="hrmsApp.documents.home.createLabel"> Create a new Documents </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="documents?.length === 0">
+    <span jhiTranslate="hrmsApp.documents.home.notFound">No Documents found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="documents && documents.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="referenceId">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.referenceId">Reference Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="type">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.type">Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="subtype">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.subtype">Subtype</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fileName">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.fileName">File Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="filePath">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.filePath">File Path</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fileUrl">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.fileUrl">File Url</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="issuedDate">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.issuedDate">Issued Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="validUpTo">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.validUpTo">Valid Up To</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="placeOfIssued">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.placeOfIssued">Place Of Issued</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="hasVerified">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.hasVerified">Has Verified</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="remark">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.remark">Remark</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModified">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.lastModified">Last Modified</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModifiedBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.lastModifiedBy">Last Modified By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.createdBy">Created By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdOn">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.createdOn">Created On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isDeleted">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.isDeleted">Is Deleted</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField1">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.freeField1">Free Field 1</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField2">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.freeField2">Free Field 2</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField3">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.freeField3">Free Field 3</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="employee.id">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.employee">Employee</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="organization.id">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.documents.organization">Organization</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let documents of documents; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/documents', documents.id, 'view']">{{ documents.id }}</a>
+          </td>
+          <td>{{ documents.referenceId }}</td>
+          <td>{{ documents.type }}</td>
+          <td>{{ documents.subtype }}</td>
+          <td>{{ documents.fileName }}</td>
+          <td>{{ documents.filePath }}</td>
+          <td>{{ documents.fileUrl }}</td>
+          <td>{{ documents.issuedDate | formatMediumDatetime }}</td>
+          <td>{{ documents.validUpTo | formatMediumDatetime }}</td>
+          <td>{{ documents.placeOfIssued }}</td>
+          <td>{{ documents.hasVerified }}</td>
+          <td>{{ documents.remark }}</td>
+          <td>{{ documents.lastModified | formatMediumDatetime }}</td>
+          <td>{{ documents.lastModifiedBy }}</td>
+          <td>{{ documents.createdBy }}</td>
+          <td>{{ documents.createdOn | formatMediumDatetime }}</td>
+          <td>{{ documents.isDeleted }}</td>
+          <td>{{ documents.freeField1 }}</td>
+          <td>{{ documents.freeField2 }}</td>
+          <td>{{ documents.freeField3 }}</td>
+          <td>
+            <div *ngIf="documents.employee">
+              <a [routerLink]="['/employee', documents.employee.id, 'view']">{{ documents.employee.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="documents.organization">
+              <a [routerLink]="['/organization', documents.organization.id, 'view']">{{ documents.organization.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/documents', documents.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/documents', documents.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(documents)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="documents && documents.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

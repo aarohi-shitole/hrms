@@ -1,0 +1,116 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="documents">
+      <h2 data-cy="documentsDetailsHeading"><span jhiTranslate="hrmsApp.documents.detail.title">Documents</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ documents.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.referenceId">Reference Id</span></dt>
+        <dd>
+          <span>{{ documents.referenceId }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.type">Type</span></dt>
+        <dd>
+          <span>{{ documents.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.subtype">Subtype</span></dt>
+        <dd>
+          <span>{{ documents.subtype }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.fileName">File Name</span></dt>
+        <dd>
+          <span>{{ documents.fileName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.filePath">File Path</span></dt>
+        <dd>
+          <span>{{ documents.filePath }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.fileUrl">File Url</span></dt>
+        <dd>
+          <span>{{ documents.fileUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.issuedDate">Issued Date</span></dt>
+        <dd>
+          <span>{{ documents.issuedDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.validUpTo">Valid Up To</span></dt>
+        <dd>
+          <span>{{ documents.validUpTo | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.placeOfIssued">Place Of Issued</span></dt>
+        <dd>
+          <span>{{ documents.placeOfIssued }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.hasVerified">Has Verified</span></dt>
+        <dd>
+          <span>{{ documents.hasVerified }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.remark">Remark</span></dt>
+        <dd>
+          <span>{{ documents.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ documents.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ documents.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ documents.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ documents.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.isDeleted">Is Deleted</span></dt>
+        <dd>
+          <span>{{ documents.isDeleted }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.freeField1">Free Field 1</span></dt>
+        <dd>
+          <span>{{ documents.freeField1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.freeField2">Free Field 2</span></dt>
+        <dd>
+          <span>{{ documents.freeField2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.freeField3">Free Field 3</span></dt>
+        <dd>
+          <span>{{ documents.freeField3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.employee">Employee</span></dt>
+        <dd>
+          <div *ngIf="documents.employee">
+            <a [routerLink]="['/employee', documents.employee.id, 'view']">{{ documents.employee.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.documents.organization">Organization</span></dt>
+        <dd>
+          <div *ngIf="documents.organization">
+            <a [routerLink]="['/organization', documents.organization.id, 'view']">{{ documents.organization.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/documents', documents.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

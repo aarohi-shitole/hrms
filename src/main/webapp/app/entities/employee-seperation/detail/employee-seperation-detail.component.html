@@ -1,0 +1,102 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="employeeSeperation">
+      <h2 data-cy="employeeSeperationDetailsHeading">
+        <span jhiTranslate="hrmsApp.employeeSeperation.detail.title">Employee Seperation</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.reasonForSeperation">Reason For Seperation</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.reasonForSeperation }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.seperationDate">Seperation Date</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.seperationDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.comment">Comment</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.comment }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.seperationStatus">Seperation Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.SeperationStatus.' + employeeSeperation.seperationStatus }}">{{
+            employeeSeperation.seperationStatus
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.otherReason">Other Reason</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.otherReason }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.nagotiatedPeriod">Nagotiated Period</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.nagotiatedPeriod }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.updatedOn">Updated On</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.updatedOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.freefield1">Freefield 1</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.freefield1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.freefield2">Freefield 2</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.freefield2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.freefield3">Freefield 3</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.freefield3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.freefield4">Freefield 4</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.freefield4 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.freefield5">Freefield 5</span></dt>
+        <dd>
+          <span>{{ employeeSeperation.freefield5 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employeeSeperation.employee">Employee</span></dt>
+        <dd>
+          <div *ngIf="employeeSeperation.employee">
+            <a [routerLink]="['/employee', employeeSeperation.employee.id, 'view']">{{ employeeSeperation.employee.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/employee-seperation', employeeSeperation.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

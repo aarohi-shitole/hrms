@@ -1,0 +1,143 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092604",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee_salary_structure",
+  "fields": [
+    {
+      "fieldName": "basicMonthly",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "bouquetOfBenefits",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "monthlyPerformancePay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "performanceBonus",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "cityAllowance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "healthInsurance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "pf",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "gratuity",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalretirals",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "retentionIncentive",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "grossPay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "hrAllowance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "ltAssistance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "foodCard",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "vehicleMaintenance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "personalAllowance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField5",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField6",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeSalaryStructure",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

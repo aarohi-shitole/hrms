@@ -1,0 +1,280 @@
+<div>
+  <h2 id="page-heading" data-cy="ExitFormaltiesHeading">
+    <span jhiTranslate="hrmsApp.exitFormalties.home.title">Exit Formalties</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="hrmsApp.exitFormalties.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-exit-formalties"
+        [routerLink]="['/exit-formalties/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="hrmsApp.exitFormalties.home.createLabel"> Create a new Exit Formalties </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="exitFormalties?.length === 0">
+    <span jhiTranslate="hrmsApp.exitFormalties.home.notFound">No Exit Formalties found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="exitFormalties && exitFormalties.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="security">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.security">Security</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="feedback">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.feedback">Feedback</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="exitDate">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.exitDate">Exit Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="exitInterview">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.exitInterview">Exit Interview</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libNoDue">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.libNoDue">Lib No Due</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="noticePeriodServed">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.noticePeriodServed">Notice Period Served</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="clearence">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.clearence">Clearence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="orgAssets">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.orgAssets">Org Assets</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="orgVehical">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.orgVehical">Org Vehical</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="resignLetter">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.resignLetter">Resign Letter</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="shares">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.shares">Shares</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="staffWelfare">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.staffWelfare">Staff Welfare</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="workForOrg">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.workForOrg">Work For Org</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModified">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.lastModified">Last Modified</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModifiedBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.lastModifiedBy">Last Modified By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.createdBy">Created By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdOn">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.createdOn">Created On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isDeleted">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.isDeleted">Is Deleted</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField1">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.freeField1">Free Field 1</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField2">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.freeField2">Free Field 2</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField3">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.freeField3">Free Field 3</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield4">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.freefield4">Freefield 4</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield5">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.freefield5">Freefield 5</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="employee.id">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.exitFormalties.employee">Employee</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exitFormalties of exitFormalties; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/exit-formalties', exitFormalties.id, 'view']">{{ exitFormalties.id }}</a>
+          </td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.security }}">{{ exitFormalties.security }}</td>
+          <td>{{ exitFormalties.feedback }}</td>
+          <td>{{ exitFormalties.exitDate | formatMediumDatetime }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.exitInterview }}">{{ exitFormalties.exitInterview }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.libNoDue }}">{{ exitFormalties.libNoDue }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.noticePeriodServed }}">{{ exitFormalties.noticePeriodServed }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.clearence }}">{{ exitFormalties.clearence }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.orgAssets }}">{{ exitFormalties.orgAssets }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.orgVehical }}">{{ exitFormalties.orgVehical }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.resignLetter }}">{{ exitFormalties.resignLetter }}</td>
+          <td>{{ exitFormalties.shares }}</td>
+          <td>{{ exitFormalties.staffWelfare }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Options.' + exitFormalties.workForOrg }}">{{ exitFormalties.workForOrg }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.Status.' + exitFormalties.status }}">{{ exitFormalties.status }}</td>
+          <td>{{ exitFormalties.lastModified | formatMediumDatetime }}</td>
+          <td>{{ exitFormalties.lastModifiedBy }}</td>
+          <td>{{ exitFormalties.createdBy }}</td>
+          <td>{{ exitFormalties.createdOn | formatMediumDatetime }}</td>
+          <td>{{ exitFormalties.isDeleted }}</td>
+          <td>{{ exitFormalties.freeField1 }}</td>
+          <td>{{ exitFormalties.freeField2 }}</td>
+          <td>{{ exitFormalties.freeField3 }}</td>
+          <td>{{ exitFormalties.freefield4 }}</td>
+          <td>{{ exitFormalties.freefield5 }}</td>
+          <td>
+            <div *ngIf="exitFormalties.employee">
+              <a [routerLink]="['/employee', exitFormalties.employee.id, 'view']">{{ exitFormalties.employee.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/exit-formalties', exitFormalties.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/exit-formalties', exitFormalties.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(exitFormalties)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="exitFormalties && exitFormalties.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

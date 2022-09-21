@@ -1,0 +1,89 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092548",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tds_payment",
+  "fields": [
+    {
+      "fieldName": "assessmentEndYear",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "assessmentStartYear",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "bankBsrCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "challanNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fromDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "toDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "taxAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "uniqueAcknowNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "TdsPayment",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
