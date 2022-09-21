@@ -1,0 +1,128 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092549",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "onboarding_details",
+  "fields": [
+    {
+      "fieldName": "applicationProcess",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "joiningDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "documentsSubmitted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "improveOnboardingProcess",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "interviewProcess",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "laptopIssued",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "onboardingProcess",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "companyPolicies",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "roleExplain",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "softwareInstalled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "officeTour",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "workOnWeekends",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "workFromHome",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "workInShifts",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "completionDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "onboardingStatus",
+      "fieldType": "ProgressStatus",
+      "fieldValues": "IN_PROGRESS (In_Progress),PENDING (Pending),COMPLETE (Complete)"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "OnboardingDetails",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

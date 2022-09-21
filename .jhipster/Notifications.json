@@ -1,0 +1,94 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092551",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "notifications",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "NotificationType",
+      "fieldValues": "APPROVAL (Apporoval),REQUEST (Request),ALERT (Alert),TRANSFER (Transfer)"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "imageUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smallIocnUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senderId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "receivedId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sendDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "receivedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "hasRead",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Notifications",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

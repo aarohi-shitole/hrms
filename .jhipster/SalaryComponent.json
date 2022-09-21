@@ -1,0 +1,103 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092603",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "salary_component",
+  "fields": [
+    {
+      "fieldName": "componentType",
+      "fieldType": "ComponentType",
+      "fieldValues": "ALLOWANCE (Allowance),DEDUCTION (Deduction),FLAG (Flag),BONUS (Bonus),FIXED_COMPENSATION (Fixed_Compensation)"
+    },
+    {
+      "fieldName": "employeeType",
+      "fieldType": "EmployeeType",
+      "fieldValues": "PERMANENT (Permanent),CONTRACT (Contract),TRAINEE (Trainee),TEMPORARY (Temporary)"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "componentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "SalaryCategory",
+      "fieldValues": "FIXED (Fixed),VARIABLE (Variable)"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "countStyle",
+      "fieldType": "CountStyle",
+      "fieldValues": "AMT (AMT),PERCENT (Percent)"
+    },
+    {
+      "fieldName": "compValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField5",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "SalaryComponent",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "organization",
+      "relationshipName": "organization",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

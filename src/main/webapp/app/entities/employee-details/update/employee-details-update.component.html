@@ -1,0 +1,344 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-employee-details-heading"
+        data-cy="EmployeeDetailsCreateUpdateHeading"
+        jhiTranslate="hrmsApp.employeeDetails.home.createOrEditLabel"
+      >
+        Create or edit a Employee Details
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.age" for="field_age">Age</label>
+          <input type="number" class="form-control" name="age" id="field_age" data-cy="age" formControlName="age" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.fatherName" for="field_fatherName">Father Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="fatherName"
+            id="field_fatherName"
+            data-cy="fatherName"
+            formControlName="fatherName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.motherName" for="field_motherName">Mother Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="motherName"
+            id="field_motherName"
+            data-cy="motherName"
+            formControlName="motherName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.employeeId" for="field_employeeId">Employee Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="employeeId"
+            id="field_employeeId"
+            data-cy="employeeId"
+            formControlName="employeeId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.yearsOfExperience" for="field_yearsOfExperience"
+            >Years Of Experience</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="yearsOfExperience"
+            id="field_yearsOfExperience"
+            data-cy="yearsOfExperience"
+            formControlName="yearsOfExperience"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.notes" for="field_notes">Notes</label>
+          <input type="text" class="form-control" name="notes" id="field_notes" data-cy="notes" formControlName="notes" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.bloodGroup" for="field_bloodGroup">Blood Group</label>
+          <select class="form-control" name="bloodGroup" formControlName="bloodGroup" id="field_bloodGroup" data-cy="bloodGroup">
+            <option [ngValue]="null">{{ 'hrmsApp.BloodGroup.null' | translate }}</option>
+            <option *ngFor="let bloodGroup of bloodGroupValues" [value]="bloodGroup">
+              {{ 'hrmsApp.BloodGroup.' + bloodGroup | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.birthDate" for="field_birthDate">Birth Date</label>
+          <input type="text" class="form-control" name="birthDate" id="field_birthDate" data-cy="birthDate" formControlName="birthDate" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.designation" for="field_designation">Designation</label>
+          <input
+            type="text"
+            class="form-control"
+            name="designation"
+            id="field_designation"
+            data-cy="designation"
+            formControlName="designation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.expertise" for="field_expertise">Expertise</label>
+          <input type="text" class="form-control" name="expertise" id="field_expertise" data-cy="expertise" formControlName="expertise" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.jobDescription" for="field_jobDescription">Job Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="jobDescription"
+            id="field_jobDescription"
+            data-cy="jobDescription"
+            formControlName="jobDescription"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.maritalStatus" for="field_maritalStatus">Marital Status</label>
+          <select
+            class="form-control"
+            name="maritalStatus"
+            formControlName="maritalStatus"
+            id="field_maritalStatus"
+            data-cy="maritalStatus"
+          >
+            <option [ngValue]="null">{{ 'hrmsApp.MaritalStatus.null' | translate }}</option>
+            <option *ngFor="let maritalStatus of maritalStatusValues" [value]="maritalStatus">
+              {{ 'hrmsApp.MaritalStatus.' + maritalStatus | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.secondaryContact" for="field_secondaryContact"
+            >Secondary Contact</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="secondaryContact"
+            id="field_secondaryContact"
+            data-cy="secondaryContact"
+            formControlName="secondaryContact"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.hobbies" for="field_hobbies">Hobbies</label>
+          <input type="text" class="form-control" name="hobbies" id="field_hobbies" data-cy="hobbies" formControlName="hobbies" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.areaInterest" for="field_areaInterest">Area Interest</label>
+          <input
+            type="text"
+            class="form-control"
+            name="areaInterest"
+            id="field_areaInterest"
+            data-cy="areaInterest"
+            formControlName="areaInterest"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.noOfDependent" for="field_noOfDependent">No Of Dependent</label>
+          <input
+            type="number"
+            class="form-control"
+            name="noOfDependent"
+            id="field_noOfDependent"
+            data-cy="noOfDependent"
+            formControlName="noOfDependent"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.languageKnown" for="field_languageKnown">Language Known</label>
+          <input
+            type="text"
+            class="form-control"
+            name="languageKnown"
+            id="field_languageKnown"
+            data-cy="languageKnown"
+            formControlName="languageKnown"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.natinality" for="field_natinality">Natinality</label>
+          <input
+            type="text"
+            class="form-control"
+            name="natinality"
+            id="field_natinality"
+            data-cy="natinality"
+            formControlName="natinality"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.description" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.department" for="field_department">Department</label>
+          <input
+            type="text"
+            class="form-control"
+            name="department"
+            id="field_department"
+            data-cy="department"
+            formControlName="department"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.joiningDate" for="field_joiningDate">Joining Date</label>
+          <div class="d-flex">
+            <input
+              id="field_joiningDate"
+              data-cy="joiningDate"
+              type="datetime-local"
+              class="form-control"
+              name="joiningDate"
+              formControlName="joiningDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.createdBy" for="field_createdBy">Created By</label>
+          <input type="text" class="form-control" name="createdBy" id="field_createdBy" data-cy="createdBy" formControlName="createdBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.createdOn" for="field_createdOn">Created On</label>
+          <div class="d-flex">
+            <input
+              id="field_createdOn"
+              data-cy="createdOn"
+              type="datetime-local"
+              class="form-control"
+              name="createdOn"
+              formControlName="createdOn"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.freefield1" for="field_freefield1">Freefield 1</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield1"
+            id="field_freefield1"
+            data-cy="freefield1"
+            formControlName="freefield1"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.freefield2" for="field_freefield2">Freefield 2</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield2"
+            id="field_freefield2"
+            data-cy="freefield2"
+            formControlName="freefield2"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.freefield3" for="field_freefield3">Freefield 3</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield3"
+            id="field_freefield3"
+            data-cy="freefield3"
+            formControlName="freefield3"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.freefield4" for="field_freefield4">Freefield 4</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield4"
+            id="field_freefield4"
+            data-cy="freefield4"
+            formControlName="freefield4"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.employeeDetails.freefield5" for="field_freefield5">Freefield 5</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield5"
+            id="field_freefield5"
+            data-cy="freefield5"
+            formControlName="freefield5"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

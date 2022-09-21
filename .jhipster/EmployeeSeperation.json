@@ -1,0 +1,87 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092531",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee_seperation",
+  "fields": [
+    {
+      "fieldName": "reasonForSeperation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "seperationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "seperationStatus",
+      "fieldType": "SeperationStatus",
+      "fieldValues": "PENDING (Pending),REVOKED (Revoked),ACCEPTED (Accepted),APPROVED (Approved),REJECTED (Rejected)"
+    },
+    {
+      "fieldName": "otherReason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nagotiatedPeriod",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield5",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeSeperation",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

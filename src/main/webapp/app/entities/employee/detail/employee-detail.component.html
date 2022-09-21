@@ -1,0 +1,132 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="employee">
+      <h2 data-cy="employeeDetailsHeading"><span jhiTranslate="hrmsApp.employee.detail.title">Employee</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ employee.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.title">Title</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Title.' + employee.title }}">{{ employee.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ employee.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.middleName">Middle Name</span></dt>
+        <dd>
+          <span>{{ employee.middleName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ employee.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.grade">Grade</span></dt>
+        <dd>
+          <span>{{ employee.grade }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.username">Username</span></dt>
+        <dd>
+          <span>{{ employee.username }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.passwordHash">Password Hash</span></dt>
+        <dd>
+          <span>{{ employee.passwordHash }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.email">Email</span></dt>
+        <dd>
+          <span>{{ employee.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.mobileNo">Mobile No</span></dt>
+        <dd>
+          <span>{{ employee.mobileNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.department">Department</span></dt>
+        <dd>
+          <span>{{ employee.department }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.imageUrl">Image Url</span></dt>
+        <dd>
+          <span>{{ employee.imageUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.activated">Activated</span></dt>
+        <dd>
+          <span>{{ employee.activated }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.langKey">Lang Key</span></dt>
+        <dd>
+          <span>{{ employee.langKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.activationKey">Activation Key</span></dt>
+        <dd>
+          <span>{{ employee.activationKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.resetKey">Reset Key</span></dt>
+        <dd>
+          <span>{{ employee.resetKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.resetDate">Reset Date</span></dt>
+        <dd>
+          <span>{{ employee.resetDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ employee.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ employee.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.employeeDetails">Employee Details</span></dt>
+        <dd>
+          <div *ngIf="employee.employeeDetails">
+            <a [routerLink]="['/employee-details', employee.employeeDetails.id, 'view']">{{ employee.employeeDetails.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.organization">Organization</span></dt>
+        <dd>
+          <div *ngIf="employee.organization">
+            <a [routerLink]="['/organization', employee.organization.id, 'view']">{{ employee.organization.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.incomeTaxSlab">Income Tax Slab</span></dt>
+        <dd>
+          <div *ngIf="employee.incomeTaxSlab">
+            <a [routerLink]="['/income-tax-slab', employee.incomeTaxSlab.id, 'view']">{{ employee.incomeTaxSlab.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.securityPermission">Security Permission</span></dt>
+        <dd>
+          <span *ngFor="let securityPermission of employee.securityPermissions; let last = last">
+            <a [routerLink]="['/security-permission', securityPermission.id, 'view']">{{ securityPermission.permissionName }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.employee.securityRole">Security Role</span></dt>
+        <dd>
+          <span *ngFor="let securityRole of employee.securityRoles; let last = last">
+            <a [routerLink]="['/security-role', securityRole.id, 'view']">{{ securityRole.roleName }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/employee', employee.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

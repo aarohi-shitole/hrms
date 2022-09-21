@@ -1,0 +1,87 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092538",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "education",
+  "fields": [
+    {
+      "fieldName": "schoolName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "degree",
+      "fieldType": "Degree",
+      "fieldValues": "PG (Post_Graduation),GRADUATION (Graduation),HSC (HSC),SSC (SSC),DIPLOMA (Diploma),OTHER (Other)"
+    },
+    {
+      "fieldName": "sector",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "eduType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Education",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

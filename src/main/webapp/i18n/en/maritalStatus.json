@@ -1,0 +1,12 @@
+{
+  "hrmsApp": {
+    "MaritalStatus": {
+      "null": "",
+      "MARRIED": "Married",
+      "SINGLE": "Single",
+      "DIVORCED": "Divorced",
+      "WIDOW": "Widow",
+      "OTHERS": "Others"
+    }
+  }
+}

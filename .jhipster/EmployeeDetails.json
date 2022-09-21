@@ -1,0 +1,130 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092530",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee_details",
+  "fields": [
+    {
+      "fieldName": "age",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fatherName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "motherName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "yearsOfExperience",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bloodGroup",
+      "fieldType": "BloodGroup",
+      "fieldValues": "A_POSITIVE (A+),B_POSITIVE (B+),O_POSITIVE (O+),O_NEGATIVE (O-),A_NEGATIVE (A-),B_NEGATIVE (B-),AB_POSITIVE (AB+),AB_NEGATIVE (AB-)"
+    },
+    {
+      "fieldName": "birthDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "designation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "expertise",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "MaritalStatus",
+      "fieldValues": "MARRIED (Married),SINGLE (Single),DIVORCED (Divorced),WIDOW (Widow),OTHERS (Others)"
+    },
+    {
+      "fieldName": "secondaryContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hobbies",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "areaInterest",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noOfDependent",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "languageKnown",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "natinality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "joiningDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "freefield1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield5",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeDetails",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

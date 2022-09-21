@@ -1,0 +1,51 @@
+{
+  "hrmsApp": {
+    "employeeDetails": {
+      "home": {
+        "title": "Employee Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Employee Details",
+        "createOrEditLabel": "Create or edit a Employee Details",
+        "notFound": "No Employee Details found"
+      },
+      "created": "A new Employee Details is created with identifier {{ param }}",
+      "updated": "A Employee Details is updated with identifier {{ param }}",
+      "deleted": "A Employee Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Employee Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee Details"
+      },
+      "id": "ID",
+      "age": "Age",
+      "fatherName": "Father Name",
+      "motherName": "Mother Name",
+      "employeeId": "Employee Id",
+      "yearsOfExperience": "Years Of Experience",
+      "notes": "Notes",
+      "bloodGroup": "Blood Group",
+      "birthDate": "Birth Date",
+      "designation": "Designation",
+      "expertise": "Expertise",
+      "jobDescription": "Job Description",
+      "maritalStatus": "Marital Status",
+      "secondaryContact": "Secondary Contact",
+      "hobbies": "Hobbies",
+      "areaInterest": "Area Interest",
+      "noOfDependent": "No Of Dependent",
+      "languageKnown": "Language Known",
+      "natinality": "Natinality",
+      "description": "Description",
+      "department": "Department",
+      "joiningDate": "Joining Date",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "freefield1": "Freefield 1",
+      "freefield2": "Freefield 2",
+      "freefield3": "Freefield 3",
+      "freefield4": "Freefield 4",
+      "freefield5": "Freefield 5"
+    }
+  }
+}

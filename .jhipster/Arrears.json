@@ -1,0 +1,91 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092610",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "arrears",
+  "fields": [
+    {
+      "fieldName": "arrearsmonth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "arrDeduction",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "arrdeedName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "arrPay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "arrPaydescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "arrType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Arrears",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

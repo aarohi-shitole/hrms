@@ -1,0 +1,84 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092609",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "emp_sal_str_revision_history",
+  "fields": [
+    {
+      "fieldName": "basicAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "gradePayAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "revisedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "scalePay",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "scaleCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "depId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField5",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField6",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmpSalStrRevisionHistory",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

@@ -1,0 +1,111 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092541",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "organization_policies",
+  "fields": [
+    {
+      "fieldName": "orgPolicyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "empType",
+      "fieldType": "EmployeeType",
+      "fieldValues": "PERMANENT (Permanent),CONTRACT (Contract),TRAINEE (Trainee),TEMPORARY (Temporary)"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "terms",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "periodInDays",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "periodInMonth",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "isNegosible",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isBuyOut",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "OrganizationPolicies",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "organization",
+      "relationshipName": "organization",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "organizationPolicies",
+      "ownerSide": true,
+      "relationshipName": "employee",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

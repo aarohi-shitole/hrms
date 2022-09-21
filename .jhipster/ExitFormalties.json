@@ -1,0 +1,129 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092532",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "exit_formalties",
+  "fields": [
+    {
+      "fieldName": "security",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "feedback",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exitDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "exitInterview",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "libNoDue",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "noticePeriodServed",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "clearence",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "orgAssets",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "orgVehical",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "resignLetter",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "shares",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "staffWelfare",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "workForOrg",
+      "fieldType": "Options",
+      "fieldValues": "YES (Yes),NO (No)"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield5",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ExitFormalties",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "ownerSide": true,
+      "relationshipName": "employee",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

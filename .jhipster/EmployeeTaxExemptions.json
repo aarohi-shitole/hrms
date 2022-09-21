@@ -1,0 +1,62 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092547",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee_tax_exemptions",
+  "fields": [
+    {
+      "fieldName": "taxExemptionsStatus",
+      "fieldType": "TaxExemptionsStatus",
+      "fieldValues": "SEND_FOR_CORRECTION (Send_For_Correction),OPEN_FOR_CORRECTION (OpenForCorrection),SAVE (Save),APPROVE (Approve),PENDING (Pending)"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeTaxExemptions",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "taxExemptionDetails",
+      "otherEntityRelationshipName": "employeeTaxExemptions",
+      "ownerSide": false,
+      "relationshipName": "taxExemptionDetails",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

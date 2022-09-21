@@ -1,0 +1,296 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-exit-formalties-heading"
+        data-cy="ExitFormaltiesCreateUpdateHeading"
+        jhiTranslate="hrmsApp.exitFormalties.home.createOrEditLabel"
+      >
+        Create or edit a Exit Formalties
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.security" for="field_security">Security</label>
+          <select class="form-control" name="security" formControlName="security" id="field_security" data-cy="security">
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.feedback" for="field_feedback">Feedback</label>
+          <input type="text" class="form-control" name="feedback" id="field_feedback" data-cy="feedback" formControlName="feedback" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.exitDate" for="field_exitDate">Exit Date</label>
+          <div class="d-flex">
+            <input
+              id="field_exitDate"
+              data-cy="exitDate"
+              type="datetime-local"
+              class="form-control"
+              name="exitDate"
+              formControlName="exitDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.exitInterview" for="field_exitInterview">Exit Interview</label>
+          <select
+            class="form-control"
+            name="exitInterview"
+            formControlName="exitInterview"
+            id="field_exitInterview"
+            data-cy="exitInterview"
+          >
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.libNoDue" for="field_libNoDue">Lib No Due</label>
+          <select class="form-control" name="libNoDue" formControlName="libNoDue" id="field_libNoDue" data-cy="libNoDue">
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.noticePeriodServed" for="field_noticePeriodServed"
+            >Notice Period Served</label
+          >
+          <select
+            class="form-control"
+            name="noticePeriodServed"
+            formControlName="noticePeriodServed"
+            id="field_noticePeriodServed"
+            data-cy="noticePeriodServed"
+          >
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.clearence" for="field_clearence">Clearence</label>
+          <select class="form-control" name="clearence" formControlName="clearence" id="field_clearence" data-cy="clearence">
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.orgAssets" for="field_orgAssets">Org Assets</label>
+          <select class="form-control" name="orgAssets" formControlName="orgAssets" id="field_orgAssets" data-cy="orgAssets">
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.orgVehical" for="field_orgVehical">Org Vehical</label>
+          <select class="form-control" name="orgVehical" formControlName="orgVehical" id="field_orgVehical" data-cy="orgVehical">
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.resignLetter" for="field_resignLetter">Resign Letter</label>
+          <select class="form-control" name="resignLetter" formControlName="resignLetter" id="field_resignLetter" data-cy="resignLetter">
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.shares" for="field_shares">Shares</label>
+          <input type="text" class="form-control" name="shares" id="field_shares" data-cy="shares" formControlName="shares" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.staffWelfare" for="field_staffWelfare">Staff Welfare</label>
+          <input
+            type="text"
+            class="form-control"
+            name="staffWelfare"
+            id="field_staffWelfare"
+            data-cy="staffWelfare"
+            formControlName="staffWelfare"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.workForOrg" for="field_workForOrg">Work For Org</label>
+          <select class="form-control" name="workForOrg" formControlName="workForOrg" id="field_workForOrg" data-cy="workForOrg">
+            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
+            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.status" for="field_status">Status</label>
+          <select class="form-control" name="status" formControlName="status" id="field_status" data-cy="status">
+            <option [ngValue]="null">{{ 'hrmsApp.Status.null' | translate }}</option>
+            <option *ngFor="let status of statusValues" [value]="status">{{ 'hrmsApp.Status.' + status | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.lastModified" for="field_lastModified">Last Modified</label>
+          <div class="d-flex">
+            <input
+              id="field_lastModified"
+              data-cy="lastModified"
+              type="datetime-local"
+              class="form-control"
+              name="lastModified"
+              formControlName="lastModified"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.lastModifiedBy" for="field_lastModifiedBy">Last Modified By</label>
+          <input
+            type="text"
+            class="form-control"
+            name="lastModifiedBy"
+            id="field_lastModifiedBy"
+            data-cy="lastModifiedBy"
+            formControlName="lastModifiedBy"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.createdBy" for="field_createdBy">Created By</label>
+          <input type="text" class="form-control" name="createdBy" id="field_createdBy" data-cy="createdBy" formControlName="createdBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.createdOn" for="field_createdOn">Created On</label>
+          <div class="d-flex">
+            <input
+              id="field_createdOn"
+              data-cy="createdOn"
+              type="datetime-local"
+              class="form-control"
+              name="createdOn"
+              formControlName="createdOn"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.isDeleted" for="field_isDeleted">Is Deleted</label>
+          <input type="checkbox" class="form-check" name="isDeleted" id="field_isDeleted" data-cy="isDeleted" formControlName="isDeleted" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.freeField1" for="field_freeField1">Free Field 1</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freeField1"
+            id="field_freeField1"
+            data-cy="freeField1"
+            formControlName="freeField1"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.freeField2" for="field_freeField2">Free Field 2</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freeField2"
+            id="field_freeField2"
+            data-cy="freeField2"
+            formControlName="freeField2"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.freeField3" for="field_freeField3">Free Field 3</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freeField3"
+            id="field_freeField3"
+            data-cy="freeField3"
+            formControlName="freeField3"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.freefield4" for="field_freefield4">Freefield 4</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield4"
+            id="field_freefield4"
+            data-cy="freefield4"
+            formControlName="freefield4"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.freefield5" for="field_freefield5">Freefield 5</label>
+          <input
+            type="text"
+            class="form-control"
+            name="freefield5"
+            id="field_freefield5"
+            data-cy="freefield5"
+            formControlName="freefield5"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.employee" for="field_employee">Employee</label>
+          <select
+            class="form-control"
+            id="field_employee"
+            data-cy="employee"
+            name="employee"
+            formControlName="employee"
+            [compareWith]="compareEmployee"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="employeeOption" *ngFor="let employeeOption of employeesSharedCollection">{{ employeeOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092557",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "holidays",
+  "fields": [
+    {
+      "fieldName": "holidayName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "holidayDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "year",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "day",
+      "fieldType": "Day",
+      "fieldValues": "MONDAY (Monday),TUESDAY (Tuesday),WEDNESDAY (Wednesday),THURSDAY (Thursday),FRIDAY (Friday),SATURDAY (Saturday),SUNDAY (Sunday)"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField5",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Holidays",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "organization",
+      "relationshipName": "organization",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

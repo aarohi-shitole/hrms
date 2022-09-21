@@ -1,0 +1,42 @@
+{
+  "hrmsApp": {
+    "workExperience": {
+      "home": {
+        "title": "Work Experiences",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Work Experience",
+        "createOrEditLabel": "Create or edit a Work Experience",
+        "notFound": "No Work Experiences found"
+      },
+      "created": "A new Work Experience is created with identifier {{ param }}",
+      "updated": "A Work Experience is updated with identifier {{ param }}",
+      "deleted": "A Work Experience is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Work Experience {{ id }}?"
+      },
+      "detail": {
+        "title": "Work Experience"
+      },
+      "id": "ID",
+      "jobTitle": "Job Title",
+      "jobDesc": "Job Desc",
+      "companyName": "Company Name",
+      "companyType": "Company Type",
+      "orgAddress": "Org Address",
+      "yearOfExp": "Year Of Exp",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "isDeleted": "Is Deleted",
+      "freeField1": "Free Field 1",
+      "freeField2": "Free Field 2",
+      "freeField3": "Free Field 3",
+      "freefield4": "Freefield 4",
+      "freefield5": "Freefield 5",
+      "employee": "Employee"
+    }
+  }
+}

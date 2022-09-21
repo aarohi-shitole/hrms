@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="bank">
+      <h2 data-cy="bankDetailsHeading"><span jhiTranslate="hrmsApp.bank.detail.title">Bank</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ bank.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.accountNo">Account No</span></dt>
+        <dd>
+          <span>{{ bank.accountNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.name">Name</span></dt>
+        <dd>
+          <span>{{ bank.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.branch">Branch</span></dt>
+        <dd>
+          <span>{{ bank.branch }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.ifscCode">Ifsc Code</span></dt>
+        <dd>
+          <span>{{ bank.ifscCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.mcirCode">Mcir Code</span></dt>
+        <dd>
+          <span>{{ bank.mcirCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ bank.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ bank.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ bank.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ bank.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.isDeleted">Is Deleted</span></dt>
+        <dd>
+          <span>{{ bank.isDeleted }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.freeField1">Free Field 1</span></dt>
+        <dd>
+          <span>{{ bank.freeField1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.freeField2">Free Field 2</span></dt>
+        <dd>
+          <span>{{ bank.freeField2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.freeField3">Free Field 3</span></dt>
+        <dd>
+          <span>{{ bank.freeField3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.employee">Employee</span></dt>
+        <dd>
+          <div *ngIf="bank.employee">
+            <a [routerLink]="['/employee', bank.employee.id, 'view']">{{ bank.employee.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.bank.organization">Organization</span></dt>
+        <dd>
+          <div *ngIf="bank.organization">
+            <a [routerLink]="['/organization', bank.organization.id, 'view']">{{ bank.organization.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bank', bank.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

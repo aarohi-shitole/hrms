@@ -1,0 +1,92 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092542",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "parameter_lookup",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "ParameterLookupType",
+      "fieldValues": "ACCOUNT (Account),GRADE (Grade),PAID_TAX (Paid_Tax),TASK (Task),TRAINING (Training),SHIFT (Shift),LEAVE_TYPE (Leave_Type),ASSETS_TYPE (Assets_Type),LANGUAGE_KNOWN (Language_Known),REGION (Region),WORK_DOC (Work),EDUCATION_DOC (Education),IDENTITY_DOC (Identity),PROFILE_DOC (Profile),PHOTO (Photo),OTHERS (Others)"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freefield3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assessmentEndYear",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "assessmentStartYear",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ParameterLookup",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "organization",
+      "relationshipName": "organization",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

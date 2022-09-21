@@ -1,0 +1,238 @@
+<div>
+  <h2 id="page-heading" data-cy="WorkExperienceHeading">
+    <span jhiTranslate="hrmsApp.workExperience.home.title">Work Experiences</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="hrmsApp.workExperience.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-work-experience"
+        [routerLink]="['/work-experience/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="hrmsApp.workExperience.home.createLabel"> Create a new Work Experience </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="workExperiences?.length === 0">
+    <span jhiTranslate="hrmsApp.workExperience.home.notFound">No Work Experiences found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="workExperiences && workExperiences.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="jobTitle">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.jobTitle">Job Title</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="jobDesc">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.jobDesc">Job Desc</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="companyName">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.companyName">Company Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="companyType">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.companyType">Company Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="orgAddress">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.orgAddress">Org Address</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="yearOfExp">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.yearOfExp">Year Of Exp</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="startDate">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.startDate">Start Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="endDate">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.endDate">End Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModified">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.lastModified">Last Modified</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModifiedBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.lastModifiedBy">Last Modified By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.createdBy">Created By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdOn">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.createdOn">Created On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isDeleted">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.isDeleted">Is Deleted</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField1">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.freeField1">Free Field 1</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField2">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.freeField2">Free Field 2</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freeField3">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.freeField3">Free Field 3</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield4">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.freefield4">Freefield 4</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield5">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.freefield5">Freefield 5</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="employee.id">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.workExperience.employee">Employee</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let workExperience of workExperiences; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/work-experience', workExperience.id, 'view']">{{ workExperience.id }}</a>
+          </td>
+          <td>{{ workExperience.jobTitle }}</td>
+          <td>{{ workExperience.jobDesc }}</td>
+          <td>{{ workExperience.companyName }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.CompanyType.' + workExperience.companyType }}">{{ workExperience.companyType }}</td>
+          <td>{{ workExperience.orgAddress }}</td>
+          <td>{{ workExperience.yearOfExp }}</td>
+          <td>{{ workExperience.startDate | formatMediumDatetime }}</td>
+          <td>{{ workExperience.endDate | formatMediumDatetime }}</td>
+          <td>{{ workExperience.lastModified | formatMediumDatetime }}</td>
+          <td>{{ workExperience.lastModifiedBy }}</td>
+          <td>{{ workExperience.createdBy }}</td>
+          <td>{{ workExperience.createdOn | formatMediumDatetime }}</td>
+          <td>{{ workExperience.isDeleted }}</td>
+          <td>{{ workExperience.freeField1 }}</td>
+          <td>{{ workExperience.freeField2 }}</td>
+          <td>{{ workExperience.freeField3 }}</td>
+          <td>{{ workExperience.freefield4 }}</td>
+          <td>{{ workExperience.freefield5 }}</td>
+          <td>
+            <div *ngIf="workExperience.employee">
+              <a [routerLink]="['/employee', workExperience.employee.id, 'view']">{{ workExperience.employee.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/work-experience', workExperience.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/work-experience', workExperience.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(workExperience)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="workExperiences && workExperiences.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

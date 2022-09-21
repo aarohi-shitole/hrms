@@ -1,0 +1,113 @@
+{
+  "applications": "*",
+  "changelogDate": "20220921092608",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee_advance_transaction",
+  "fields": [
+    {
+      "fieldName": "advAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "advInstallAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "advInstallMonth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "advYear",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "advName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "advDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "advStartDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "advEndDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE (Active),INACTIVE (Inactive)"
+    },
+    {
+      "fieldName": "paidStatus",
+      "fieldType": "PaidStatus",
+      "fieldValues": "PAID (Paid),UNPAID (UnPaid)"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField5",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "freeField6",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeAdvanceTransaction",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "advance",
+      "relationshipName": "advance",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

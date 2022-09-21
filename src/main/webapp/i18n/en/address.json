@@ -1,0 +1,41 @@
+{
+  "hrmsApp": {
+    "address": {
+      "home": {
+        "title": "Addresses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Address",
+        "createOrEditLabel": "Create or edit a Address",
+        "notFound": "No Addresses found"
+      },
+      "created": "A new Address is created with identifier {{ param }}",
+      "updated": "A Address is updated with identifier {{ param }}",
+      "deleted": "A Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Address"
+      },
+      "id": "ID",
+      "type": "Type",
+      "address1": "Address 1",
+      "hasPrefered": "Has Prefered",
+      "landMark": "Land Mark",
+      "pincode": "Pincode",
+      "lattitude": "Lattitude",
+      "longitude": "Longitude",
+      "mapNavUrl": "Map Nav Url",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "isDeleted": "Is Deleted",
+      "freeField1": "Free Field 1",
+      "freeField2": "Free Field 2",
+      "freeField3": "Free Field 3",
+      "freefield4": "Freefield 4",
+      "freefield5": "Freefield 5"
+    }
+  }
+}

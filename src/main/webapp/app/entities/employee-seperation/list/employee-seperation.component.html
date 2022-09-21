@@ -1,0 +1,226 @@
+<div>
+  <h2 id="page-heading" data-cy="EmployeeSeperationHeading">
+    <span jhiTranslate="hrmsApp.employeeSeperation.home.title">Employee Seperations</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="hrmsApp.employeeSeperation.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-employee-seperation"
+        [routerLink]="['/employee-seperation/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="hrmsApp.employeeSeperation.home.createLabel"> Create a new Employee Seperation </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="employeeSeperations?.length === 0">
+    <span jhiTranslate="hrmsApp.employeeSeperation.home.notFound">No Employee Seperations found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="employeeSeperations && employeeSeperations.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="reasonForSeperation">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.reasonForSeperation">Reason For Seperation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="seperationDate">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.seperationDate">Seperation Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="comment">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.comment">Comment</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="seperationStatus">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.seperationStatus">Seperation Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="otherReason">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.otherReason">Other Reason</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nagotiatedPeriod">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.nagotiatedPeriod">Nagotiated Period</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.createdBy">Created By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updatedOn">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.updatedOn">Updated On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdOn">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.createdOn">Created On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModified">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.lastModified">Last Modified</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModifiedBy">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.lastModifiedBy">Last Modified By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield1">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.freefield1">Freefield 1</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield2">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.freefield2">Freefield 2</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield3">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.freefield3">Freefield 3</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield4">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.freefield4">Freefield 4</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="freefield5">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.freefield5">Freefield 5</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="employee.id">
+            <div class="d-flex">
+              <span jhiTranslate="hrmsApp.employeeSeperation.employee">Employee</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employeeSeperation of employeeSeperations; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/employee-seperation', employeeSeperation.id, 'view']">{{ employeeSeperation.id }}</a>
+          </td>
+          <td>{{ employeeSeperation.reasonForSeperation }}</td>
+          <td>{{ employeeSeperation.seperationDate | formatMediumDatetime }}</td>
+          <td>{{ employeeSeperation.comment }}</td>
+          <td jhiTranslate="{{ 'hrmsApp.SeperationStatus.' + employeeSeperation.seperationStatus }}">
+            {{ employeeSeperation.seperationStatus }}
+          </td>
+          <td>{{ employeeSeperation.otherReason }}</td>
+          <td>{{ employeeSeperation.nagotiatedPeriod }}</td>
+          <td>{{ employeeSeperation.createdBy }}</td>
+          <td>{{ employeeSeperation.updatedOn | formatMediumDatetime }}</td>
+          <td>{{ employeeSeperation.createdOn | formatMediumDatetime }}</td>
+          <td>{{ employeeSeperation.lastModified | formatMediumDatetime }}</td>
+          <td>{{ employeeSeperation.lastModifiedBy }}</td>
+          <td>{{ employeeSeperation.freefield1 }}</td>
+          <td>{{ employeeSeperation.freefield2 }}</td>
+          <td>{{ employeeSeperation.freefield3 }}</td>
+          <td>{{ employeeSeperation.freefield4 }}</td>
+          <td>{{ employeeSeperation.freefield5 }}</td>
+          <td>
+            <div *ngIf="employeeSeperation.employee">
+              <a [routerLink]="['/employee', employeeSeperation.employee.id, 'view']">{{ employeeSeperation.employee.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/employee-seperation', employeeSeperation.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/employee-seperation', employeeSeperation.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(employeeSeperation)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="employeeSeperations && employeeSeperations.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

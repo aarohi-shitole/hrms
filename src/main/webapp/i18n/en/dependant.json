@@ -1,0 +1,40 @@
+{
+  "hrmsApp": {
+    "dependant": {
+      "home": {
+        "title": "Dependants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dependant",
+        "createOrEditLabel": "Create or edit a Dependant",
+        "notFound": "No Dependants found"
+      },
+      "created": "A new Dependant is created with identifier {{ param }}",
+      "updated": "A Dependant is updated with identifier {{ param }}",
+      "deleted": "A Dependant is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dependant {{ id }}?"
+      },
+      "detail": {
+        "title": "Dependant"
+      },
+      "id": "ID",
+      "name": "Name",
+      "age": "Age",
+      "dateOfBirth": "Date Of Birth",
+      "type": "Type",
+      "mobile": "Mobile",
+      "address": "Address",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "isDeleted": "Is Deleted",
+      "freeField1": "Free Field 1",
+      "freeField2": "Free Field 2",
+      "freeField3": "Free Field 3",
+      "freefield4": "Freefield 4",
+      "freefield5": "Freefield 5",
+      "employee": "Employee"
+    }
+  }
+}

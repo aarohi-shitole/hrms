@@ -1,0 +1,48 @@
+{
+  "hrmsApp": {
+    "exitFormalties": {
+      "home": {
+        "title": "Exit Formalties",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Exit Formalties",
+        "createOrEditLabel": "Create or edit a Exit Formalties",
+        "notFound": "No Exit Formalties found"
+      },
+      "created": "A new Exit Formalties is created with identifier {{ param }}",
+      "updated": "A Exit Formalties is updated with identifier {{ param }}",
+      "deleted": "A Exit Formalties is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Exit Formalties {{ id }}?"
+      },
+      "detail": {
+        "title": "Exit Formalties"
+      },
+      "id": "ID",
+      "security": "Security",
+      "feedback": "Feedback",
+      "exitDate": "Exit Date",
+      "exitInterview": "Exit Interview",
+      "libNoDue": "Lib No Due",
+      "noticePeriodServed": "Notice Period Served",
+      "clearence": "Clearence",
+      "orgAssets": "Org Assets",
+      "orgVehical": "Org Vehical",
+      "resignLetter": "Resign Letter",
+      "shares": "Shares",
+      "staffWelfare": "Staff Welfare",
+      "workForOrg": "Work For Org",
+      "status": "Status",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "isDeleted": "Is Deleted",
+      "freeField1": "Free Field 1",
+      "freeField2": "Free Field 2",
+      "freeField3": "Free Field 3",
+      "freefield4": "Freefield 4",
+      "freefield5": "Freefield 5",
+      "employee": "Employee"
+    }
+  }
+}
