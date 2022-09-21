@@ -86,25 +86,25 @@ entity EmployeeSeperation{
    
 }
 
-enum Options{
+enum Answers{
     YES(Yes)
     NO(No)
 }
 
 entity ExitFormalties {
-    security Options
+    security Answers
 	feedback String
     exitDate Instant
-    exitInterview Options
-    libNoDue Options
-    noticePeriodServed Options
-    clearence Options
-    orgAssets Options
-    orgVehical Options
-    resignLetter Options
+    exitInterview Answers
+    libNoDue Answers
+    noticePeriodServed Answers
+    clearence Answers
+    orgAssets Answers
+    orgVehical Answers
+    resignLetter Answers
     shares String
     staffWelfare String
-    workForOrg Options
+    workForOrg Answers
     status Status
     lastModified Instant 
 	lastModifiedBy String 

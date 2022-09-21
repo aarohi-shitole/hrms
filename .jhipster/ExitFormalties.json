@@ -7,7 +7,7 @@
   "fields": [
     {
       "fieldName": "security",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
@@ -20,37 +20,37 @@
     },
     {
       "fieldName": "exitInterview",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
       "fieldName": "libNoDue",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
       "fieldName": "noticePeriodServed",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
       "fieldName": "clearence",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
       "fieldName": "orgAssets",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
       "fieldName": "orgVehical",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
       "fieldName": "resignLetter",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {
@@ -63,7 +63,7 @@
     },
     {
       "fieldName": "workForOrg",
-      "fieldType": "Options",
+      "fieldType": "Answers",
       "fieldValues": "YES (Yes),NO (No)"
     },
     {

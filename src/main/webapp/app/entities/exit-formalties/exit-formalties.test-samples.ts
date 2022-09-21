@@ -1,6 +1,6 @@
 import dayjs from 'dayjs/esm';
 
-import { Options } from 'app/entities/enumerations/options.model';
+import { Answers } from 'app/entities/enumerations/answers.model';
 import { Status } from 'app/entities/enumerations/status.model';
 
 import { IExitFormalties, NewExitFormalties } from './exit-formalties.model';
@@ -11,15 +11,15 @@ export const sampleWithRequiredData: IExitFormalties = {
 
 export const sampleWithPartialData: IExitFormalties = {
   id: 13201,
-  security: Options['NO'],
+  security: Answers['NO'],
   feedback: 'compress Intelligent connecting',
   exitDate: dayjs('2022-09-21T01:00'),
-  noticePeriodServed: Options['YES'],
-  clearence: Options['NO'],
-  orgAssets: Options['NO'],
-  resignLetter: Options['NO'],
+  noticePeriodServed: Answers['YES'],
+  clearence: Answers['NO'],
+  orgAssets: Answers['NO'],
+  resignLetter: Answers['NO'],
   shares: 'Cotton',
-  workForOrg: Options['YES'],
+  workForOrg: Answers['YES'],
   freeField2: 'port Checking Future-proofed',
   freeField3: 'bandwidth quantifying Programmable',
   freefield5: 'Chief',
@@ -27,19 +27,19 @@ export const sampleWithPartialData: IExitFormalties = {
 
 export const sampleWithFullData: IExitFormalties = {
   id: 83964,
-  security: Options['YES'],
+  security: Answers['YES'],
   feedback: 'Sleek Louisiana',
   exitDate: dayjs('2022-09-21T08:02'),
-  exitInterview: Options['NO'],
-  libNoDue: Options['YES'],
-  noticePeriodServed: Options['NO'],
-  clearence: Options['YES'],
-  orgAssets: Options['NO'],
-  orgVehical: Options['YES'],
-  resignLetter: Options['YES'],
+  exitInterview: Answers['NO'],
+  libNoDue: Answers['YES'],
+  noticePeriodServed: Answers['NO'],
+  clearence: Answers['YES'],
+  orgAssets: Answers['NO'],
+  orgVehical: Answers['YES'],
+  resignLetter: Answers['YES'],
   shares: 'Cross-group capacitor Agent',
   staffWelfare: 'Account Loan plum',
-  workForOrg: Options['NO'],
+  workForOrg: Answers['NO'],
   status: Status['INACTIVE'],
   lastModified: dayjs('2022-09-21T06:08'),
   lastModifiedBy: 'Savings',

@@ -1,0 +1,40 @@
+{
+  "hrmsApp": {
+    "education": {
+      "home": {
+        "title": "Educations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Education",
+        "createOrEditLabel": "Create or edit a Education",
+        "notFound": "No Educations found"
+      },
+      "created": "A new Education is created with identifier {{ param }}",
+      "updated": "A Education is updated with identifier {{ param }}",
+      "deleted": "A Education is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Education {{ id }}?"
+      },
+      "detail": {
+        "title": "Education"
+      },
+      "id": "ID",
+      "schoolName": "School Name",
+      "degree": "Degree",
+      "sector": "Sector",
+      "eduType": "Edu Type",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "grade": "Grade",
+      "description": "Description",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "isDeleted": "Is Deleted",
+      "freeField1": "Free Field 1",
+      "freeField2": "Free Field 2",
+      "freeField3": "Free Field 3",
+      "employee": "Employee"
+    }
+  }
+}
