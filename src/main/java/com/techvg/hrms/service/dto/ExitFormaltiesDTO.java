@@ -1,6 +1,6 @@
 package com.techvg.hrms.service.dto;
 
-import com.techvg.hrms.domain.enumeration.Options;
+import com.techvg.hrms.domain.enumeration.Answers;
 import com.techvg.hrms.domain.enumeration.Status;
 import java.io.Serializable;
 import java.time.Instant;
@@ -14,31 +14,31 @@ public class ExitFormaltiesDTO implements Serializable {
 
     private Long id;
 
-    private Options security;
+    private Answers security;
 
     private String feedback;
 
     private Instant exitDate;
 
-    private Options exitInterview;
+    private Answers exitInterview;
 
-    private Options libNoDue;
+    private Answers libNoDue;
 
-    private Options noticePeriodServed;
+    private Answers noticePeriodServed;
 
-    private Options clearence;
+    private Answers clearence;
 
-    private Options orgAssets;
+    private Answers orgAssets;
 
-    private Options orgVehical;
+    private Answers orgVehical;
 
-    private Options resignLetter;
+    private Answers resignLetter;
 
     private String shares;
 
     private String staffWelfare;
 
-    private Options workForOrg;
+    private Answers workForOrg;
 
     private Status status;
 
@@ -72,11 +72,11 @@ public class ExitFormaltiesDTO implements Serializable {
         this.id = id;
     }
 
-    public Options getSecurity() {
+    public Answers getSecurity() {
         return security;
     }
 
-    public void setSecurity(Options security) {
+    public void setSecurity(Answers security) {
         this.security = security;
     }
 
@@ -96,59 +96,59 @@ public class ExitFormaltiesDTO implements Serializable {
         this.exitDate = exitDate;
     }
 
-    public Options getExitInterview() {
+    public Answers getExitInterview() {
         return exitInterview;
     }
 
-    public void setExitInterview(Options exitInterview) {
+    public void setExitInterview(Answers exitInterview) {
         this.exitInterview = exitInterview;
     }
 
-    public Options getLibNoDue() {
+    public Answers getLibNoDue() {
         return libNoDue;
     }
 
-    public void setLibNoDue(Options libNoDue) {
+    public void setLibNoDue(Answers libNoDue) {
         this.libNoDue = libNoDue;
     }
 
-    public Options getNoticePeriodServed() {
+    public Answers getNoticePeriodServed() {
         return noticePeriodServed;
     }
 
-    public void setNoticePeriodServed(Options noticePeriodServed) {
+    public void setNoticePeriodServed(Answers noticePeriodServed) {
         this.noticePeriodServed = noticePeriodServed;
     }
 
-    public Options getClearence() {
+    public Answers getClearence() {
         return clearence;
     }
 
-    public void setClearence(Options clearence) {
+    public void setClearence(Answers clearence) {
         this.clearence = clearence;
     }
 
-    public Options getOrgAssets() {
+    public Answers getOrgAssets() {
         return orgAssets;
     }
 
-    public void setOrgAssets(Options orgAssets) {
+    public void setOrgAssets(Answers orgAssets) {
         this.orgAssets = orgAssets;
     }
 
-    public Options getOrgVehical() {
+    public Answers getOrgVehical() {
         return orgVehical;
     }
 
-    public void setOrgVehical(Options orgVehical) {
+    public void setOrgVehical(Answers orgVehical) {
         this.orgVehical = orgVehical;
     }
 
-    public Options getResignLetter() {
+    public Answers getResignLetter() {
         return resignLetter;
     }
 
-    public void setResignLetter(Options resignLetter) {
+    public void setResignLetter(Answers resignLetter) {
         this.resignLetter = resignLetter;
     }
 
@@ -168,11 +168,11 @@ public class ExitFormaltiesDTO implements Serializable {
         this.staffWelfare = staffWelfare;
     }
 
-    public Options getWorkForOrg() {
+    public Answers getWorkForOrg() {
         return workForOrg;
     }
 
-    public void setWorkForOrg(Options workForOrg) {
+    public void setWorkForOrg(Answers workForOrg) {
         this.workForOrg = workForOrg;
     }
 

@@ -8,15 +8,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.techvg.hrms.IntegrationTest;
 import com.techvg.hrms.domain.Employee;
 import com.techvg.hrms.domain.ExitFormalties;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
 import com.techvg.hrms.domain.enumeration.Status;
 import com.techvg.hrms.repository.ExitFormaltiesRepository;
 import com.techvg.hrms.service.criteria.ExitFormaltiesCriteria;
@@ -45,8 +45,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class ExitFormaltiesResourceIT {
 
-    private static final Options DEFAULT_SECURITY = Options.YES;
-    private static final Options UPDATED_SECURITY = Options.NO;
+    private static final Answers DEFAULT_SECURITY = Answers.YES;
+    private static final Answers UPDATED_SECURITY = Answers.NO;
 
     private static final String DEFAULT_FEEDBACK = "AAAAAAAAAA";
     private static final String UPDATED_FEEDBACK = "BBBBBBBBBB";
@@ -54,26 +54,26 @@ class ExitFormaltiesResourceIT {
     private static final Instant DEFAULT_EXIT_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_EXIT_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
-    private static final Options DEFAULT_EXIT_INTERVIEW = Options.YES;
-    private static final Options UPDATED_EXIT_INTERVIEW = Options.NO;
+    private static final Answers DEFAULT_EXIT_INTERVIEW = Answers.YES;
+    private static final Answers UPDATED_EXIT_INTERVIEW = Answers.NO;
 
-    private static final Options DEFAULT_LIB_NO_DUE = Options.YES;
-    private static final Options UPDATED_LIB_NO_DUE = Options.NO;
+    private static final Answers DEFAULT_LIB_NO_DUE = Answers.YES;
+    private static final Answers UPDATED_LIB_NO_DUE = Answers.NO;
 
-    private static final Options DEFAULT_NOTICE_PERIOD_SERVED = Options.YES;
-    private static final Options UPDATED_NOTICE_PERIOD_SERVED = Options.NO;
+    private static final Answers DEFAULT_NOTICE_PERIOD_SERVED = Answers.YES;
+    private static final Answers UPDATED_NOTICE_PERIOD_SERVED = Answers.NO;
 
-    private static final Options DEFAULT_CLEARENCE = Options.YES;
-    private static final Options UPDATED_CLEARENCE = Options.NO;
+    private static final Answers DEFAULT_CLEARENCE = Answers.YES;
+    private static final Answers UPDATED_CLEARENCE = Answers.NO;
 
-    private static final Options DEFAULT_ORG_ASSETS = Options.YES;
-    private static final Options UPDATED_ORG_ASSETS = Options.NO;
+    private static final Answers DEFAULT_ORG_ASSETS = Answers.YES;
+    private static final Answers UPDATED_ORG_ASSETS = Answers.NO;
 
-    private static final Options DEFAULT_ORG_VEHICAL = Options.YES;
-    private static final Options UPDATED_ORG_VEHICAL = Options.NO;
+    private static final Answers DEFAULT_ORG_VEHICAL = Answers.YES;
+    private static final Answers UPDATED_ORG_VEHICAL = Answers.NO;
 
-    private static final Options DEFAULT_RESIGN_LETTER = Options.YES;
-    private static final Options UPDATED_RESIGN_LETTER = Options.NO;
+    private static final Answers DEFAULT_RESIGN_LETTER = Answers.YES;
+    private static final Answers UPDATED_RESIGN_LETTER = Answers.NO;
 
     private static final String DEFAULT_SHARES = "AAAAAAAAAA";
     private static final String UPDATED_SHARES = "BBBBBBBBBB";
@@ -81,8 +81,8 @@ class ExitFormaltiesResourceIT {
     private static final String DEFAULT_STAFF_WELFARE = "AAAAAAAAAA";
     private static final String UPDATED_STAFF_WELFARE = "BBBBBBBBBB";
 
-    private static final Options DEFAULT_WORK_FOR_ORG = Options.YES;
-    private static final Options UPDATED_WORK_FOR_ORG = Options.NO;
+    private static final Answers DEFAULT_WORK_FOR_ORG = Answers.YES;
+    private static final Answers UPDATED_WORK_FOR_ORG = Answers.NO;
 
     private static final Status DEFAULT_STATUS = Status.ACTIVE;
     private static final Status UPDATED_STATUS = Status.INACTIVE;

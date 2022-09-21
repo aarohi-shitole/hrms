@@ -20,8 +20,8 @@
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.security" for="field_security">Security</label>
           <select class="form-control" name="security" formControlName="security" id="field_security" data-cy="security">
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
@@ -54,16 +54,16 @@
             id="field_exitInterview"
             data-cy="exitInterview"
           >
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.libNoDue" for="field_libNoDue">Lib No Due</label>
           <select class="form-control" name="libNoDue" formControlName="libNoDue" id="field_libNoDue" data-cy="libNoDue">
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
@@ -78,40 +78,40 @@
             id="field_noticePeriodServed"
             data-cy="noticePeriodServed"
           >
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.clearence" for="field_clearence">Clearence</label>
           <select class="form-control" name="clearence" formControlName="clearence" id="field_clearence" data-cy="clearence">
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.orgAssets" for="field_orgAssets">Org Assets</label>
           <select class="form-control" name="orgAssets" formControlName="orgAssets" id="field_orgAssets" data-cy="orgAssets">
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.orgVehical" for="field_orgVehical">Org Vehical</label>
           <select class="form-control" name="orgVehical" formControlName="orgVehical" id="field_orgVehical" data-cy="orgVehical">
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.resignLetter" for="field_resignLetter">Resign Letter</label>
           <select class="form-control" name="resignLetter" formControlName="resignLetter" id="field_resignLetter" data-cy="resignLetter">
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 
@@ -135,8 +135,8 @@
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="hrmsApp.exitFormalties.workForOrg" for="field_workForOrg">Work For Org</label>
           <select class="form-control" name="workForOrg" formControlName="workForOrg" id="field_workForOrg" data-cy="workForOrg">
-            <option [ngValue]="null">{{ 'hrmsApp.Options.null' | translate }}</option>
-            <option *ngFor="let options of optionsValues" [value]="options">{{ 'hrmsApp.Options.' + options | translate }}</option>
+            <option [ngValue]="null">{{ 'hrmsApp.Answers.null' | translate }}</option>
+            <option *ngFor="let answers of answersValues" [value]="answers">{{ 'hrmsApp.Answers.' + answers | translate }}</option>
           </select>
         </div>
 

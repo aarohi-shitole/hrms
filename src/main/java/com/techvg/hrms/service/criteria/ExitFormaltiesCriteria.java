@@ -1,14 +1,14 @@
 package com.techvg.hrms.service.criteria;
 
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
-import com.techvg.hrms.domain.enumeration.Options;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
+import com.techvg.hrms.domain.enumeration.Answers;
 import com.techvg.hrms.domain.enumeration.Status;
 import java.io.Serializable;
 import java.util.Objects;
@@ -30,19 +30,19 @@ import tech.jhipster.service.filter.*;
 public class ExitFormaltiesCriteria implements Serializable, Criteria {
 
     /**
-     * Class for filtering Options
+     * Class for filtering Answers
      */
-    public static class OptionsFilter extends Filter<Options> {
+    public static class AnswersFilter extends Filter<Answers> {
 
-        public OptionsFilter() {}
+        public AnswersFilter() {}
 
-        public OptionsFilter(OptionsFilter filter) {
+        public AnswersFilter(AnswersFilter filter) {
             super(filter);
         }
 
         @Override
-        public OptionsFilter copy() {
-            return new OptionsFilter(this);
+        public AnswersFilter copy() {
+            return new AnswersFilter(this);
         }
     }
 
@@ -67,31 +67,31 @@ public class ExitFormaltiesCriteria implements Serializable, Criteria {
 
     private LongFilter id;
 
-    private OptionsFilter security;
+    private AnswersFilter security;
 
     private StringFilter feedback;
 
     private InstantFilter exitDate;
 
-    private OptionsFilter exitInterview;
+    private AnswersFilter exitInterview;
 
-    private OptionsFilter libNoDue;
+    private AnswersFilter libNoDue;
 
-    private OptionsFilter noticePeriodServed;
+    private AnswersFilter noticePeriodServed;
 
-    private OptionsFilter clearence;
+    private AnswersFilter clearence;
 
-    private OptionsFilter orgAssets;
+    private AnswersFilter orgAssets;
 
-    private OptionsFilter orgVehical;
+    private AnswersFilter orgVehical;
 
-    private OptionsFilter resignLetter;
+    private AnswersFilter resignLetter;
 
     private StringFilter shares;
 
     private StringFilter staffWelfare;
 
-    private OptionsFilter workForOrg;
+    private AnswersFilter workForOrg;
 
     private StatusFilter status;
 
@@ -171,18 +171,18 @@ public class ExitFormaltiesCriteria implements Serializable, Criteria {
         this.id = id;
     }
 
-    public OptionsFilter getSecurity() {
+    public AnswersFilter getSecurity() {
         return security;
     }
 
-    public OptionsFilter security() {
+    public AnswersFilter security() {
         if (security == null) {
-            security = new OptionsFilter();
+            security = new AnswersFilter();
         }
         return security;
     }
 
-    public void setSecurity(OptionsFilter security) {
+    public void setSecurity(AnswersFilter security) {
         this.security = security;
     }
 
@@ -216,108 +216,108 @@ public class ExitFormaltiesCriteria implements Serializable, Criteria {
         this.exitDate = exitDate;
     }
 
-    public OptionsFilter getExitInterview() {
+    public AnswersFilter getExitInterview() {
         return exitInterview;
     }
 
-    public OptionsFilter exitInterview() {
+    public AnswersFilter exitInterview() {
         if (exitInterview == null) {
-            exitInterview = new OptionsFilter();
+            exitInterview = new AnswersFilter();
         }
         return exitInterview;
     }
 
-    public void setExitInterview(OptionsFilter exitInterview) {
+    public void setExitInterview(AnswersFilter exitInterview) {
         this.exitInterview = exitInterview;
     }
 
-    public OptionsFilter getLibNoDue() {
+    public AnswersFilter getLibNoDue() {
         return libNoDue;
     }
 
-    public OptionsFilter libNoDue() {
+    public AnswersFilter libNoDue() {
         if (libNoDue == null) {
-            libNoDue = new OptionsFilter();
+            libNoDue = new AnswersFilter();
         }
         return libNoDue;
     }
 
-    public void setLibNoDue(OptionsFilter libNoDue) {
+    public void setLibNoDue(AnswersFilter libNoDue) {
         this.libNoDue = libNoDue;
     }
 
-    public OptionsFilter getNoticePeriodServed() {
+    public AnswersFilter getNoticePeriodServed() {
         return noticePeriodServed;
     }
 
-    public OptionsFilter noticePeriodServed() {
+    public AnswersFilter noticePeriodServed() {
         if (noticePeriodServed == null) {
-            noticePeriodServed = new OptionsFilter();
+            noticePeriodServed = new AnswersFilter();
         }
         return noticePeriodServed;
     }
 
-    public void setNoticePeriodServed(OptionsFilter noticePeriodServed) {
+    public void setNoticePeriodServed(AnswersFilter noticePeriodServed) {
         this.noticePeriodServed = noticePeriodServed;
     }
 
-    public OptionsFilter getClearence() {
+    public AnswersFilter getClearence() {
         return clearence;
     }
 
-    public OptionsFilter clearence() {
+    public AnswersFilter clearence() {
         if (clearence == null) {
-            clearence = new OptionsFilter();
+            clearence = new AnswersFilter();
         }
         return clearence;
     }
 
-    public void setClearence(OptionsFilter clearence) {
+    public void setClearence(AnswersFilter clearence) {
         this.clearence = clearence;
     }
 
-    public OptionsFilter getOrgAssets() {
+    public AnswersFilter getOrgAssets() {
         return orgAssets;
     }
 
-    public OptionsFilter orgAssets() {
+    public AnswersFilter orgAssets() {
         if (orgAssets == null) {
-            orgAssets = new OptionsFilter();
+            orgAssets = new AnswersFilter();
         }
         return orgAssets;
     }
 
-    public void setOrgAssets(OptionsFilter orgAssets) {
+    public void setOrgAssets(AnswersFilter orgAssets) {
         this.orgAssets = orgAssets;
     }
 
-    public OptionsFilter getOrgVehical() {
+    public AnswersFilter getOrgVehical() {
         return orgVehical;
     }
 
-    public OptionsFilter orgVehical() {
+    public AnswersFilter orgVehical() {
         if (orgVehical == null) {
-            orgVehical = new OptionsFilter();
+            orgVehical = new AnswersFilter();
         }
         return orgVehical;
     }
 
-    public void setOrgVehical(OptionsFilter orgVehical) {
+    public void setOrgVehical(AnswersFilter orgVehical) {
         this.orgVehical = orgVehical;
     }
 
-    public OptionsFilter getResignLetter() {
+    public AnswersFilter getResignLetter() {
         return resignLetter;
     }
 
-    public OptionsFilter resignLetter() {
+    public AnswersFilter resignLetter() {
         if (resignLetter == null) {
-            resignLetter = new OptionsFilter();
+            resignLetter = new AnswersFilter();
         }
         return resignLetter;
     }
 
-    public void setResignLetter(OptionsFilter resignLetter) {
+    public void setResignLetter(AnswersFilter resignLetter) {
         this.resignLetter = resignLetter;
     }
 
@@ -351,18 +351,18 @@ public class ExitFormaltiesCriteria implements Serializable, Criteria {
         this.staffWelfare = staffWelfare;
     }
 
-    public OptionsFilter getWorkForOrg() {
+    public AnswersFilter getWorkForOrg() {
         return workForOrg;
     }
 
-    public OptionsFilter workForOrg() {
+    public AnswersFilter workForOrg() {
         if (workForOrg == null) {
-            workForOrg = new OptionsFilter();
+            workForOrg = new AnswersFilter();
         }
         return workForOrg;
     }
 
-    public void setWorkForOrg(OptionsFilter workForOrg) {
+    public void setWorkForOrg(AnswersFilter workForOrg) {
         this.workForOrg = workForOrg;
     }
 

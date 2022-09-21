@@ -9,7 +9,7 @@ import { IExitFormalties } from '../exit-formalties.model';
 import { ExitFormaltiesService } from '../service/exit-formalties.service';
 import { IEmployee } from 'app/entities/employee/employee.model';
 import { EmployeeService } from 'app/entities/employee/service/employee.service';
-import { Options } from 'app/entities/enumerations/options.model';
+import { Answers } from 'app/entities/enumerations/answers.model';
 import { Status } from 'app/entities/enumerations/status.model';
 
 @Component({
@@ -19,7 +19,7 @@ import { Status } from 'app/entities/enumerations/status.model';
 export class ExitFormaltiesUpdateComponent implements OnInit {
   isSaving = false;
   exitFormalties: IExitFormalties | null = null;
-  optionsValues = Object.keys(Options);
+  answersValues = Object.keys(Answers);
   statusValues = Object.keys(Status);
 
   employeesSharedCollection: IEmployee[] = [];

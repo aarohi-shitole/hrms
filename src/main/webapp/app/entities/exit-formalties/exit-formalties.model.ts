@@ -1,23 +1,23 @@
 import dayjs from 'dayjs/esm';
 import { IEmployee } from 'app/entities/employee/employee.model';
-import { Options } from 'app/entities/enumerations/options.model';
+import { Answers } from 'app/entities/enumerations/answers.model';
 import { Status } from 'app/entities/enumerations/status.model';
 
 export interface IExitFormalties {
   id: number;
-  security?: Options | null;
+  security?: Answers | null;
   feedback?: string | null;
   exitDate?: dayjs.Dayjs | null;
-  exitInterview?: Options | null;
-  libNoDue?: Options | null;
-  noticePeriodServed?: Options | null;
-  clearence?: Options | null;
-  orgAssets?: Options | null;
-  orgVehical?: Options | null;
-  resignLetter?: Options | null;
+  exitInterview?: Answers | null;
+  libNoDue?: Answers | null;
+  noticePeriodServed?: Answers | null;
+  clearence?: Answers | null;
+  orgAssets?: Answers | null;
+  orgVehical?: Answers | null;
+  resignLetter?: Answers | null;
   shares?: string | null;
   staffWelfare?: string | null;
-  workForOrg?: Options | null;
+  workForOrg?: Answers | null;
   status?: Status | null;
   lastModified?: dayjs.Dayjs | null;
   lastModifiedBy?: string | null;

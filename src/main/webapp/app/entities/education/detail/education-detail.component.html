@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="education">
+      <h2 data-cy="educationDetailsHeading"><span jhiTranslate="hrmsApp.education.detail.title">Education</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ education.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.schoolName">School Name</span></dt>
+        <dd>
+          <span>{{ education.schoolName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.degree">Degree</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'hrmsApp.Degree.' + education.degree }}">{{ education.degree }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.sector">Sector</span></dt>
+        <dd>
+          <span>{{ education.sector }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.eduType">Edu Type</span></dt>
+        <dd>
+          <span>{{ education.eduType }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.startDate">Start Date</span></dt>
+        <dd>
+          <span>{{ education.startDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.endDate">End Date</span></dt>
+        <dd>
+          <span>{{ education.endDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.grade">Grade</span></dt>
+        <dd>
+          <span>{{ education.grade }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.description">Description</span></dt>
+        <dd>
+          <span>{{ education.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ education.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ education.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ education.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ education.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.isDeleted">Is Deleted</span></dt>
+        <dd>
+          <span>{{ education.isDeleted }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.freeField1">Free Field 1</span></dt>
+        <dd>
+          <span>{{ education.freeField1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.freeField2">Free Field 2</span></dt>
+        <dd>
+          <span>{{ education.freeField2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.freeField3">Free Field 3</span></dt>
+        <dd>
+          <span>{{ education.freeField3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="hrmsApp.education.employee">Employee</span></dt>
+        <dd>
+          <div *ngIf="education.employee">
+            <a [routerLink]="['/employee', education.employee.id, 'view']">{{ education.employee.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/education', education.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
