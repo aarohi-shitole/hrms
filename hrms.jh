@@ -1,0 +1,1270 @@
+entity Employee {
+    title Title
+    firstName String
+    middleName String
+    lastName String
+    grade String
+    username String required unique
+    passwordHash String required
+	email String unique 
+  	mobileNo String
+    department String
+    imageUrl String
+    activated Boolean 
+    langKey String
+    activationKey String
+    resetKey String
+    resetDate Instant
+    createdBy String
+	createdOn Instant
+}
+
+entity SecurityRole {
+	roleName String required unique
+	description String
+    lastModified Instant 
+	lastModifiedBy String 
+}
+
+entity SecurityPermission{
+	permissionName String required unique
+	description String
+    lastModified Instant 
+	lastModifiedBy String 
+    
+}
+
+
+entity EmployeeDetails {
+    age Long
+    fatherName String
+    motherName String
+    employeeId String 
+    yearsOfExperience Double
+    notes String
+    bloodGroup BloodGroup
+    birthDate String
+    designation String
+    expertise String
+    jobDescription String
+    maritalStatus MaritalStatus
+    secondaryContact String
+    hobbies String
+    areaInterest String
+    noOfDependent Long
+    languageKnown LanguageKnown
+    natinality String
+    description String
+    department String
+    joiningDate Instant
+    createdBy String
+	createdOn Instant
+    freefield1 String
+    freefield2 String
+    freefield3 String
+    freefield4 String
+    freefield5 String
+}
+
+
+entity EmployeeSeperation{
+	reasonForSeperation String
+	seperationDate Instant
+	comment String
+	seperationStatus SeperationStatus
+	otherReason String
+    nagotiatedPeriod Long
+	createdBy String
+    updatedOn Instant
+	createdOn Instant
+    lastModified Instant 
+	lastModifiedBy String
+    freefield1 String
+    freefield2 String
+    freefield3 String
+    freefield4 String
+    freefield5 String
+   
+}
+
+enum Options{
+    YES(Yes)
+    NO(No)
+}
+
+entity ExitFormalties {
+    security Options
+	feedback String
+    exitDate Instant
+    exitInterview Options
+    libNoDue Options
+    noticePeriodServed Options
+    clearence Options
+    orgAssets Options
+    orgVehical Options
+    resignLetter Options
+    shares String
+    staffWelfare String
+    workForOrg Options
+    status Status
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freefield4 String
+    freefield5 String
+}
+
+
+entity Address {
+	type AddressType
+    address1 String
+    address1 String 
+    address1 String
+    hasPrefered Boolean
+    landMark String
+    pincode String
+    lattitude Double
+    longitude Double
+    mapNavUrl String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freefield4 String
+    freefield5 String
+}
+
+entity Dependant {
+    name String
+    age String
+    dateOfBirth String 
+    type DependantType
+    mobile String
+    address String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freefield4 String
+    freefield5 String
+}
+
+entity Documents {
+    referenceId Long
+	type String
+    subtype String
+    fileName String 
+    filePath String
+    fileUrl String
+    issuedDate Instant
+    validUpTo Instant
+    placeOfIssued String
+    hasVerified Boolean
+    remark String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+}
+
+entity Bank {
+    accountNo Long
+	name String
+    branch String
+    ifscCode String 
+    mcirCode String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+}
+
+enum BloodGroup
+{
+     A_POSITIVE("A+")
+     B_POSITIVE("B+")
+     O_POSITIVE("O+")
+     O_NEGATIVE("O-")
+     A_NEGATIVE("A-")
+     B_NEGATIVE("B-")
+     AB_POSITIVE("AB+")
+     AB_NEGATIVE("AB-")
+     
+     
+}
+
+enum Title
+{
+     MR("Mr")
+     MRS("Mrs")
+     MISS("Miss")
+     
+}
+
+entity WorkExperience {
+	jobTitle String
+    jobDesc String
+    companyName String
+    companyType CompanyType
+    orgAddress String
+    yearOfExp Double
+    startDate Instant
+    endDate Instant
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freefield4 String
+    freefield5 String
+}
+
+entity Education {
+	schoolName String
+    degree Degree
+    sector String
+    eduType EducationType
+    startDate Instant
+    endDate Instant
+    grade Double
+    description String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+}
+
+enum Degree
+{
+    PG("Post_Graduation")
+    GRADUATION("Graduation")
+    HSC("HSC")
+    SSC("SSC")
+    DIPLOMA("Diploma")
+    OTHER("Other")
+}
+enum CompanyType{
+    GOVERNMENT_SECTOR(Government_Sector)
+    PUBLIC_SECTOR(Public_Sector)
+    PRIVATE_SECTOR(Private_Sector)
+    LOCAL_INDUSTRY(Local_Industry)
+    PROP_INDUSTRY(Prop_Industry)
+}
+
+entity Organization{
+    orgName String unique required
+    branchcode String
+    region String
+    ifscCode String
+    micrCode String
+    swiftCode String
+    ibanCode String
+    routingTransitNo String
+    regNumber Double
+    gstinNumber String unique
+    panNumber String unique
+    tanNumber String unique
+    phone String
+    email String 
+    webSite String
+    fax String
+    orgType OrganizationType
+    createdOn Instant
+	createdBy String
+	description String 
+    isDeleted String
+	status Status 
+    lastModified Instant 
+	lastModifiedBy String 
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity OrganizationAssets {
+	orgAssetName  String
+    type String
+    category String
+    depreciation Double
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity OrganizationPolicies {
+	orgPolicyName  String
+    empType EmployeeType
+    description String
+    terms String
+    periodInDays Long
+    periodInMonth Long
+    isNegosible Boolean
+    isBuyOut Boolean
+    startDate Instant
+    endDate Instant  
+    status Status
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity ParameterLookup {
+    status Status
+    type ParameterLookupType
+    name String
+    value String
+    description String
+    freefield1 String
+    freefield2 String
+    freefield3 String
+    assessmentEndYear Instant
+    assessmentStartYear Instant
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+}
+
+enum DeviceType{
+    MOBILE(Mobile)
+    WEB(Web)
+}
+
+entity IncomeTaxSlab {
+    slab String
+    finYear String
+    asiYear String
+    lowerSlab String
+    higherSlab String
+    incomeTaxPer Double
+    newSlabPersentage Double
+    oldSlabPersentage Double
+    surcharge Double
+    cessCharge Double
+    educationCessCharge Double
+    otherCessCharge Double
+    year Long
+    remark String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+    freeField5 String
+}
+
+
+entity TaxExemptionSection {
+	taxExcemptionSection String
+	maxLimit  Double   
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+    freeField5 String
+}
+
+entity TaxExemptionSubSection {
+	taxExcemptionSubSection String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+   
+}
+
+entity TaxExemptionDetails {
+	amount Double
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+   
+}
+
+
+entity TdsPayment {
+	assessmentEndYear Instant
+    assessmentStartYear Instant
+    bankBsrCode String
+    challanNumber String
+    fromDate Instant
+    toDate Instant
+    taxAmount Double
+    uniqueAcknowNo String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    status Status
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity OnboardingDetails {
+	applicationProcess String
+    joiningDate Instant
+    documentsSubmitted Boolean
+    improveOnboardingProcess String
+    interviewProcess String
+    laptopIssued Boolean
+    onboardingProcess Boolean
+    companyPolicies Boolean
+    roleExplain String
+    softwareInstalled Boolean
+    status Status
+    officeTour Boolean
+    workOnWeekends Boolean
+    workFromHome Boolean
+    workInShifts Boolean
+    completionDate Instant
+    onboardingStatus OnboardingStatus
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+
+}
+
+entity EmployeeAssetApplication {
+    assetType OrganAssetsType
+    quantity Long
+    description String
+    reqStatus RequestStatus
+    status Status
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+}
+
+entity Notifications {
+    title String
+    type NotificationType
+    description String
+    status Status
+    imageUrl String
+    smallIocnUrl String
+    senderId Long
+    receivedId Long
+    sendDate Instant
+    receivedDate Instant
+    hasRead Boolean
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+}
+
+
+enum NotificationType{
+	APPROVAL(Apporoval),
+    REQUEST(Request),
+    ALERT(Alert),
+    TRANSFER(Transfer)
+}
+
+entity Festival {
+    festivalname String
+    type String
+    status Status
+    description String
+    festivalDate Instant
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freefield4 String
+}
+
+enum OrganizationType{
+    SOCIETY(Society)
+    CO_SOCIETY(Co_Society)
+    BANK(Bank)
+    URBAN_BANK(Urban_bank)
+    RURAL_BANK(Rural_bank)
+}
+
+entity WorkingDays {
+    workDays String
+    status Status
+    description String
+    monthYear String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity LeavePolicy {
+    leaveType LeaveType
+    isCarryForword Boolean
+    employeeType EmployeeType
+    genderLeave GenderLeave
+    status Status
+    totalLeave String
+    maxLeave String
+    hasproRataLeave Boolean
+    description String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField4 String
+    freeField5 String
+}
+
+
+entity LeaveApplication {
+    leaveType String
+    balanceLeave Long
+    noOfDays Long
+    reason String
+    year Long
+    formDate Instant
+    toDate Instant
+    status Status
+  	leaveStatus LeaveStatus
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+}
+
+
+entity LeaveTranscation {
+    leaveType String
+    empId String
+    monthDate Instant   
+    status Status 
+    year Long
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+}
+
+entity Holidays {
+    holidayName String
+    holidayDate Instant
+    year String
+	day Day
+    status Status
+    startDate Instant
+    endDate Instant
+    description String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField4 String
+    freeField5 String
+}
+
+entity Attendance {
+    checkIn Instant
+    checkOut Instant
+    date String
+    lattitude Double
+    longitude Double
+    ipAddress String
+    remark String
+    deviceType DeviceType
+    deviceDetails String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+}
+
+entity Advance {
+	name String
+	advanceAmt  Double
+    advanceDate Instant
+    installAmt Double
+    installmentMonths Integer
+    advanceStatus Boolean
+    fullName String
+    instaYear Long
+    monthDate Instant
+    instEndDate Instant
+    instStartDate Instant
+    status Status
+    pendingAmount Double
+    pendingMonth Integer
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+
+entity Training {
+ 	completeDate Instant
+    startDate Instant
+    progressStatus ProgressStatus
+	percentage Double
+    status Status 
+    remark String
+    attendeeId Long
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity Scale {
+ 	scaleCode String
+    description String  
+    scaleMaxAmount Double
+    scaleMinAmount Double
+    status Status 
+    isDeleted Boolean
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity SalaryHeads {
+ 	countStyle String
+    salHeads String 
+    standard Boolean
+    salaryType SalaryType
+    status Status 
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity SalaryComponent {
+    componentType ComponentType
+    employeeType EmployeeType
+    grade String
+    componentName String
+    category SalaryCategory
+    status Status
+    countStyle CountStyle
+    compValue Double
+    description String
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+    freeField5 String
+}
+
+entity EmployeeSalaryStructure{
+    basicMonthly Double
+    bouquetOfBenefits Double
+    monthlyPerformancePay Double
+    performanceBonus Double
+    cityAllowance Double
+    healthInsurance Double
+    pf Double
+    Gratuity Double
+    totalretirals Double
+    retentionIncentive Double
+    grossPay Double
+    hrAllowance Double
+    ltAssistance Double
+    foodCard Double
+    vehicleMaintenance Double
+    personalAllowance Double
+    startDate Instant
+    endDate Instant
+    status Status
+    isDeleted Boolean
+    createdOn Instant 
+    createdBy String
+    lastModified Instant 
+    lastModifiedBy String
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+    freeField5 String
+    freeField6 String 
+}
+
+entity EmployeeAllowanceDeduction{
+    amount Double
+    componentName String
+    compType ComponentType
+    description String
+    startDate Instant
+    endDate Instant
+    appliedMonth String
+    status Status
+    isDeleted Boolean
+    createdOn Instant 
+    createdBy String
+    lastModified Instant 
+    lastModifiedBy String
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+    freeField5 String
+    freeField6 String 
+}
+
+entity PayBill {
+	aadharNum String required unique
+	dAbsAmt  Double
+    absentDays Double
+    dAfkRent Double
+    dApfAcpf Double
+    dArrear Double
+    arrearPay Double
+    bankAcctNo Double
+    dBklnRec Double
+    bankName String
+    basic Double
+    costHeadName String
+    createdUserId Long
+    dCpf Double
+    deptName String
+    deptId Long
+    desgName String
+    empType Long
+    empId Long
+    empName String
+    dFaRecovery Double
+    gis Double
+    gradePay Double
+    grossPay Double
+    dGrpIns Double
+    dIncTax Double
+    incAmt Double
+    incDate Instant
+    dlFee Double
+    dMisc Double
+    monthDate Instant
+    netPay Double
+    otherAmt Double
+    otAmt Double
+    paidLeave Double
+    pancardNum String required unique
+    dPfInRec Double
+    pfNumber String
+    dPfs Double
+    dPolicy Double
+    dProfTax Double
+    scale String
+    scalePay String
+    dSociety Double
+    status Status
+    totAllowance Double
+    totDed Double
+    totalGrosspay Double
+    totalDay Double
+    dUnionFee Double
+    dVlnRec Double
+    ca Double
+    cca Double
+    da Double
+    fpalw Double
+    hra Double
+    npa Double
+    dOther Double
+    tAllowance Double
+    talw Double
+    ta Double
+    ufalw Double
+    wa Double
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+
+entity PolicyDetails {
+ 	budgetHead String
+    policyName String
+    status Status 
+    paymentDate Instant
+    paymentAmount Double
+    installmentType InstallmentType
+    policyNumber Long
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity EmployeeAdvanceTransaction{
+    advAmount Double
+    advInstallAmount Double
+    advInstallMonth String
+    advYear String
+    advName String
+    advDate Instant
+    advStartDate Instant
+    advEndDate Instant
+    status Status
+    paidStatus PaidStatus
+    isDeleted Boolean
+    createdOn Instant 
+    createdBy String
+    lastModified Instant 
+    lastModifiedBy String
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+    freeField5 String
+    freeField6 String 
+}
+
+entity EmpSalStrRevisionHistory{
+    basicAmount Double
+    gradePayAmount Double
+    revisedDate Instant
+    scalePay Double
+    scaleCode String
+    depId Long
+    isDeleted Boolean
+    createdOn Instant 
+    createdBy String
+    lastModified Instant 
+    lastModifiedBy String
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+    freeField5 String
+    freeField6 String 
+}
+
+enum PaidStatus{
+	PAID(Paid)
+    UNPAID(UnPaid)
+}
+
+entity Arrears {
+	arrearsmonth String
+	arrDeduction  Double
+    arrdeedName String
+    note String
+    arrPay Double
+    arrPaydescription String
+    arrType String
+    status Status
+    isDeleted Boolean
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+    freeField4 String
+}
+
+entity Comments {
+	title String
+	type CommentsType
+    arrdeedName String
+    description String
+    senderId Long
+    reciverId Long
+    status Status
+    isDeleted Boolean
+    lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+    freeField3 String
+}
+
+enum MaritalStatus {
+	MARRIED(Married)
+    SINGLE(Single)
+    DIVORCED(Divorced)
+    WIDOW(Widow)
+    OTHERS(Others)
+}
+
+enum DependantType {
+   MOTHER(Mother)
+   CHILD(Child)
+   SISTER(Sister)
+   Daughter(Divorced)
+   SPOUSE(Spouse)
+}
+
+enum CountStyle {
+   AMT(AMT)
+   PERCENT(Percent)
+}
+
+enum InstallmentType{
+   MONTHLY(Monthly)
+   QUATERLY(Percent)
+   YEARLY(Yearly)
+}
+
+enum Status {
+   ACTIVE(Active)
+   INACTIVE(Inactive)
+}
+
+enum EmployeeType{
+	PERMANENT(Permanent)
+    CONTRACT(Contract)
+    TRAINEE(Trainee)
+    TEMPORARY(Temporary)
+}
+
+enum Gender{
+	MALE(Male)
+    FEMALE(Female)
+    TRANSGENDER(Transgender)
+    OTHER(Other)
+}
+
+enum GenderLeave{
+	MALE_ONLY(Male_Only)
+    FEMALE_ONLY(Female_Only)
+    FOR_ALL(For_All)
+}
+
+enum Day{
+	MONDAY(Monday)
+    TUESDAY(Tuesday)
+    WEDNESDAY(Wednesday)
+    THURSDAY(Thursday)
+    FRIDAY(Friday)
+    SATURDAY(Saturday)
+    SUNDAY(Sunday)
+}
+
+enum ComponentType{
+	ALLOWANCE(Allowance)
+    DEDUCTION(Deduction)
+    FLAG(Flag)
+    BONUS(Bonus)
+    FIXED_COMPENSATION(Fixed_Compensation)
+}
+
+enum OrganAssetsType
+{
+    MOBILE(Mobile)
+    LAPTOP(Laptop)
+    UNIFORM(Uniform)
+    IDENTITY_CARD(Identity_card)
+}
+
+enum SalaryCategory{
+	FIXED(Fixed)
+    VARIABLE(Variable)
+}
+
+enum LeaveStatus{
+	APPROVED(Approved)
+    PENDING(Pending)
+    REJECTED(Rejected)
+    CANCELLED(cancelled)
+    AVAILED(Availed)
+}
+
+enum RequestStatus{
+	APPROVED(Approved)
+    PENDING(Pending)
+    REJECTED(Rejected)
+    CANCELLED(cancelled)
+}
+
+enum ProgressStatus{
+	IN_PROGRESS(In_Progress)
+    PENDING(Pending)
+    COMPLETE(Complete)
+}
+
+enum SeperationStatus
+{
+    PENDING(Pending)
+    REVOKED(Revoked)
+    ACCEPTED(Accepted)
+    APPROVED(Approved)
+    REJECTED(Rejected)   
+}
+
+ enum AddressType{
+    CURRENT_ADDRESS(Current_Address)
+    PERMANENT_ADDRESS(Permanent_Address)
+    EMPLOYMENT_ADDRESS(Employment_Address)
+}
+
+
+enum SalaryType{
+   EARNING(Earning)
+   DEDUCTION(Deduction)
+}
+
+enum ParameterLookupType {
+    ACCOUNT(Account)
+    GRADE(Grade)
+    PAID_TAX(Paid_Tax)
+    TASK(Task)
+    TRAINING(Training)
+    SHIFT(Shift)
+    LEAVE_TYPE(Leave_Type)
+    ASSETS_TYPE(Assets_Type)
+    LANGUAGE_KNOWN(Language_Known)
+    REGION(Region)
+    WORK_DOC(Work)
+    EDUCATION_DOC(Education)
+    IDENTITY_DOC(Identity)
+    PROFILE_DOC(Profile)
+    PHOTO(Photo)
+    OTHERS(Others)
+}
+
+relationship ManyToMany {
+	TaxExemptionDetails{employeeTaxExemptions} to EmployeeTaxExemptions{taxExemptionDetails}
+}
+
+entity EmployeeTaxExemptions{
+taxExemptionsStatus TaxExemptionsStatus 
+ lastModified Instant 
+	lastModifiedBy String 
+    createdBy String
+	createdOn Instant
+    isDeleted Boolean
+    freeField1 String
+    freeField2 String
+}
+
+
+enum TaxExemptionsStatus {
+SEND_FOR_CORRECTION("SendForCorrection")
+OPEN_FOR_CORRECTION("OpenForCorrection")
+SAVE("Save")
+APPROVE("Approve")
+PENDING("Pending")
+}
+
+
+relationship OneToOne{
+    Employee{employeeDetails} to EmployeeDetails
+    Organization{address} to Address
+    ExitFormalties{employee} to Employee
+}
+ 
+relationship ManyToOne {
+   	 Education{employee} to Employee
+     WorkExperience{employee} to Employee
+     PolicyDetails{employee} to Employee
+     Documents{employee} to Employee
+     Attendance{employee} to Employee
+     LeaveApplication{employee} to Employee
+     Dependant{employee} to Employee
+     EmployeeSalaryStructure{employee} to Employee
+     EmployeeAllowanceDeduction{employee} to Employee
+     PayBill{employee} to Employee
+     Training{employee} to Employee
+     Bank{employee} to Employee
+     EmployeeTaxExemption{employee} to Employee
+     Arrears{employee} to Employee
+     Advance{employee} to Employee
+     EmployeeAssetApplication{employee} to Employee
+     EmployeeAdvanceTransaction{employee} to Employee
+     EmployeeSeperation{employee} to Employee
+     OnboardingDetails{employee} to Employee
+     WorkingDays{employee} to Employee
+     
+}
+
+relationship ManyToOne{
+    ParameterLookup{organization} to Organization
+    Organization{organization} to Organization   
+    OrganizationAssets{organization} to Organization
+    Bank{organization} to Organization    
+    Employee{organization} to Organization
+    SalaryComponent{organization} to Organization
+    Documents{organization} to Organization
+    OrganizationPolicies{organization} to Organization
+    SalaryHeads{organization} to Organization 
+    Holidays{organization} to Organization  
+   } 
+
+relationship ManyToOne{
+    PayBill{employeeSalaryStructure} to EmployeeSalaryStructure
+    EmployeeAllowanceDeduction{payBill} to PayBill
+    EmployeeAdvanceTransaction{advance} to Advance
+    LeaveApplication{leavePolicy} to Leavepolicy
+  }  
+
+relationship ManyToOne{ 
+	TaxExemptionSubSection{taxExemptionSection} to TaxExemptionSection
+	TaxExemptionDetails{TaxExemptionSubSection} to TaxExemptionSubSection
+	Employee{incomeTaxSlab} to IncomeTaxSlab
+}
+
+relationship ManyToMany {
+	TaxExemptionDetails{employeeTaxExemptions} to EmployeeTaxExemptions{taxExemptionDetails}
+    OrganizationPolicies{employee} to Employee{organizationPolicies}
+}
+
+
+relationship ManyToMany {
+    SecurityRole{securityPermission(permissionName)} to SecurityPermission{securityRole(roleName)}
+    Employee{securityPermission(permissionName)} to SecurityPermission{employee(username)}
+    Employee{securityRole(roleName)} to SecurityRole{employee(username)}
+  }
+      
+    
+  // Set pagination options
+paginate * with infinite-scroll
+paginate * with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service * with serviceClass
+
+filter *
+// Set an angular suffix
+// angularSuffix * with tvg
